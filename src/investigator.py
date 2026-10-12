@@ -314,5 +314,4 @@ if __name__ == "__main__":
             print(f"  Reproduction Steps: {step['tool_result']['reproduction_steps']}")
 
     print("\nToken & Cost Totals:")
-    client = LLMClient()
-    print(client.tracker.summary())
+    print(report["token_usage"])
