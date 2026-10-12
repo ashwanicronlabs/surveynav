@@ -1,0 +1,7247 @@
+{
+  "defaultConfirmitLanguageId": 1,
+  "languages": [
+    {
+      "confirmitLanguageId": 9
+    },
+    {
+      "confirmitLanguageId": 18
+    },
+    {
+      "confirmitLanguageId": 31
+    },
+    {
+      "confirmitLanguageId": 1046
+    },
+    {
+      "confirmitLanguageId": 2058
+    }
+  ],
+  "root": {
+    "name": "response",
+    "texts": [
+      {
+        "languageId": 1,
+        "text": "Please review this section before continuing. [Demo response; schema item 855]"
+      }
+    ],
+    "keys": [
+      {
+        "name": "responseid",
+        "variableType": "numeric",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      }
+    ],
+    "variables": [
+      {
+        "name": "respid",
+        "variableType": "numeric",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "status",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "complete",
+            "hasOtherField": false
+          },
+          {
+            "code": "incomplete",
+            "hasOtherField": false
+          },
+          {
+            "code": "quotafull",
+            "hasOtherField": false
+          },
+          {
+            "code": "error",
+            "hasOtherField": false
+          },
+          {
+            "code": "screened",
+            "hasOtherField": false
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "interview_start",
+        "variableType": "dateTime",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "interview_end",
+        "variableType": "dateTime",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "lastchannel",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "lastdevicetype",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "lastrenderingmode",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "last_touched",
+        "variableType": "dateTime",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "lastcomplete",
+        "variableType": "dateTime",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": true,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "first_question_on_last_page_displayed",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "length": 2
+      },
+      {
+        "name": "hiduserid",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidredirectlink",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hPunch",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": true,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "bgrpid",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": true,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "bgSource",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": true,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidsource",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "bgtest",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": true,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "isTest",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "bgLinkStatus",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": true,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidrespurl",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidquerystring",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "l",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1046",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1046"
+              }
+            ]
+          },
+          {
+            "code": "2058",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2058"
+              }
+            ]
+          },
+          {
+            "code": "31",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 31"
+              }
+            ]
+          },
+          {
+            "code": "18",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 18"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "ErrorMessage",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          },
+          {
+            "code": "9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 9"
+              }
+            ]
+          },
+          {
+            "code": "10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 10"
+              }
+            ]
+          },
+          {
+            "code": "11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 11"
+              }
+            ]
+          },
+          {
+            "code": "12",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 12"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S0",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "INTRODUCTION",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Privacy",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S0a",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S0b",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S0c",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S0d",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S1",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S2",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S3",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S4",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S5",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "S6",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S7",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "S8",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "S9",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "S10",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "96",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "S11",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S12",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "S13",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "S14",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "tSection3",
+        "variableType": "numeric",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q1",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q2",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q3",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q4",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q5",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "96",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 96"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q6",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "introQ7",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q7Mx",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q7Sk",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q7Tk",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q7Dk",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "99",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 99"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q9",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q10",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          },
+          {
+            "code": "9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 9"
+              }
+            ]
+          },
+          {
+            "code": "10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 10"
+              }
+            ]
+          },
+          {
+            "code": "11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 11"
+              }
+            ]
+          },
+          {
+            "code": "96",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 96"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q11",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          },
+          {
+            "code": "9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 9"
+              }
+            ]
+          },
+          {
+            "code": "10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 10"
+              }
+            ]
+          },
+          {
+            "code": "11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 11"
+              }
+            ]
+          },
+          {
+            "code": "12",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 12"
+              }
+            ]
+          },
+          {
+            "code": "13",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 13"
+              }
+            ]
+          },
+          {
+            "code": "99",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 99"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q12",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          },
+          {
+            "code": "6",
+            "hasOtherField": false
+          },
+          {
+            "code": "7",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q17",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "Q18",
+        "variableType": "singleChoice",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q19",
+        "variableType": "singleChoice",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q20",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          },
+          {
+            "code": "6",
+            "hasOtherField": false
+          },
+          {
+            "code": "7",
+            "hasOtherField": false
+          },
+          {
+            "code": "8",
+            "hasOtherField": false
+          },
+          {
+            "code": "96",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "Q21",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T11",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "T12",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "T24New",
+        "variableType": "ranking",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          },
+          {
+            "code": "6",
+            "hasOtherField": false
+          },
+          {
+            "code": "7",
+            "hasOtherField": false
+          },
+          {
+            "code": "8",
+            "hasOtherField": false
+          },
+          {
+            "code": "96",
+            "hasOtherField": false
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "T13",
+        "variableType": "singleChoice",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          },
+          {
+            "code": "6",
+            "hasOtherField": false
+          },
+          {
+            "code": "7",
+            "hasOtherField": false
+          },
+          {
+            "code": "8",
+            "hasOtherField": false
+          },
+          {
+            "code": "96",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T14",
+        "variableType": "singleChoice",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          },
+          {
+            "code": "6",
+            "hasOtherField": false
+          },
+          {
+            "code": "7",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T15",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T16",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T17",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "T18",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T18Dk",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "T19",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "96",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 96"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "T20",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T21",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T23",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "T24",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hAPPENDIX",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PCurrencyHidden",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PRICING_INTRO",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "P1",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P2",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P3",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PP1",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PP2",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PP3",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PP4",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "PP5",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "dPSPriceShown",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "dPSAllPunch",
+        "variableType": "singleChoice",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "dPSPriceOrder",
+        "variableType": "singleChoice",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P9",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P10",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P11",
+        "variableType": "numeric",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false,
+        "lowerNumericLimit": 0.0,
+        "lowerLimitType": "inclusive",
+        "upperNumericLimit": 100.0,
+        "upperLimitType": "inclusive",
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x1",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x2",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x3",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x4",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x5",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x6",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x7",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x8",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x9",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12x10",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          }
+        ]
+      },
+      {
+        "name": "P12Ex",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "P12",
+        "variableType": "text",
+        "isCompound": true,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "fields": [
+          {
+            "code": "1",
+            "hasOtherField": false
+          },
+          {
+            "code": "2",
+            "hasOtherField": false
+          },
+          {
+            "code": "3",
+            "hasOtherField": false
+          },
+          {
+            "code": "4",
+            "hasOtherField": false
+          },
+          {
+            "code": "5",
+            "hasOtherField": false
+          },
+          {
+            "code": "6",
+            "hasOtherField": false
+          },
+          {
+            "code": "7",
+            "hasOtherField": false
+          },
+          {
+            "code": "8",
+            "hasOtherField": false
+          },
+          {
+            "code": "9",
+            "hasOtherField": false
+          },
+          {
+            "code": "10",
+            "hasOtherField": false
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "infoEND",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "tSectionTotal",
+        "variableType": "numeric",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidQueDropout",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidQualified",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidCustomErrorMsg",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "oe",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option oe"
+              }
+            ]
+          },
+          {
+            "code": "oes",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option oes"
+              }
+            ]
+          },
+          {
+            "code": "generic1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option generic1"
+              }
+            ]
+          },
+          {
+            "code": "oealpha",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option oealpha"
+              }
+            ]
+          },
+          {
+            "code": "numrng",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option numrng"
+              }
+            ]
+          },
+          {
+            "code": "regcity",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option regcity"
+              }
+            ]
+          },
+          {
+            "code": "oewords",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option oewords"
+              }
+            ]
+          },
+          {
+            "code": "num100cnt",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option num100cnt"
+              }
+            ]
+          },
+          {
+            "code": "num100pct",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option num100pct"
+              }
+            ]
+          },
+          {
+            "code": "DateDKNA",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateDKNA"
+              }
+            ]
+          },
+          {
+            "code": "DateDOB1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateDOB1"
+              }
+            ]
+          },
+          {
+            "code": "DateFuture1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateFuture1"
+              }
+            ]
+          },
+          {
+            "code": "DateFuture1Row",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateFuture1Row"
+              }
+            ]
+          },
+          {
+            "code": "DateDiagFuture",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateDiagFuture"
+              }
+            ]
+          },
+          {
+            "code": "DateB4Diag",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateB4Diag"
+              }
+            ]
+          },
+          {
+            "code": "DateB4DiagRow",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateB4DiagRow"
+              }
+            ]
+          },
+          {
+            "code": "numrngcust",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option numrngcust"
+              }
+            ]
+          },
+          {
+            "code": "numwhole",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option numwhole"
+              }
+            ]
+          },
+          {
+            "code": "DateDiffAfter",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateDiffAfter"
+              }
+            ]
+          },
+          {
+            "code": "DateDiffBefore",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option DateDiffBefore"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidCustomLabels",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "s4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s4"
+              }
+            ]
+          },
+          {
+            "code": "s6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s6"
+              }
+            ]
+          },
+          {
+            "code": "s7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s7"
+              }
+            ]
+          },
+          {
+            "code": "s8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s8"
+              }
+            ]
+          },
+          {
+            "code": "s9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s9"
+              }
+            ]
+          },
+          {
+            "code": "s10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s10"
+              }
+            ]
+          },
+          {
+            "code": "s10a",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s10a"
+              }
+            ]
+          },
+          {
+            "code": "m10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option m10"
+              }
+            ]
+          },
+          {
+            "code": "m11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option m11"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidFlatlineFlag",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "m0",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option m0"
+              }
+            ]
+          },
+          {
+            "code": "m9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option m9"
+              }
+            ]
+          },
+          {
+            "code": "q4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option q4"
+              }
+            ]
+          },
+          {
+            "code": "q5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option q5"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidLOI",
+        "variableType": "numeric",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidLOISec",
+        "variableType": "numeric",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "precision": 2,
+        "scale": 2,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidSurveyStart",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidSurveyEnd",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "tStart",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "tEnd",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hBrowserType",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hBrowserVersion",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hBrowser",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hIPAddress",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false,
+        "length": 2
+      },
+      {
+        "name": "hIPFlag",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hScreenResolution",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hSRMode",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hDeviceTypeMain",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hUserAgent",
+        "variableType": "text",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hOperatingSystem",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          },
+          {
+            "code": "9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 9"
+              }
+            ]
+          },
+          {
+            "code": "10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 10"
+              }
+            ]
+          },
+          {
+            "code": "11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 11"
+              }
+            ]
+          },
+          {
+            "code": "12",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 12"
+              }
+            ]
+          },
+          {
+            "code": "13",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 13"
+              }
+            ]
+          },
+          {
+            "code": "21",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 21"
+              }
+            ]
+          },
+          {
+            "code": "22",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 22"
+              }
+            ]
+          },
+          {
+            "code": "23",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 23"
+              }
+            ]
+          },
+          {
+            "code": "24",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 24"
+              }
+            ]
+          },
+          {
+            "code": "25",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 25"
+              }
+            ]
+          },
+          {
+            "code": "26",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 26"
+              }
+            ]
+          },
+          {
+            "code": "27",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 27"
+              }
+            ]
+          },
+          {
+            "code": "28",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 28"
+              }
+            ]
+          },
+          {
+            "code": "99",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 99"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hDeviceType",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          },
+          {
+            "code": "3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 3"
+              }
+            ]
+          },
+          {
+            "code": "4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 4"
+              }
+            ]
+          },
+          {
+            "code": "5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 5"
+              }
+            ]
+          },
+          {
+            "code": "6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 6"
+              }
+            ]
+          },
+          {
+            "code": "7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 7"
+              }
+            ]
+          },
+          {
+            "code": "8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 8"
+              }
+            ]
+          },
+          {
+            "code": "9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 9"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "iComplete",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidScreened",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "uid",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option uid"
+              }
+            ]
+          },
+          {
+            "code": "S1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S1"
+              }
+            ]
+          },
+          {
+            "code": "S2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S2"
+              }
+            ]
+          },
+          {
+            "code": "S3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S3"
+              }
+            ]
+          },
+          {
+            "code": "S4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S4"
+              }
+            ]
+          },
+          {
+            "code": "S6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S6"
+              }
+            ]
+          },
+          {
+            "code": "S11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S11"
+              }
+            ]
+          },
+          {
+            "code": "S12",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S12"
+              }
+            ]
+          },
+          {
+            "code": "S14",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S14"
+              }
+            ]
+          },
+          {
+            "code": "S5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S5"
+              }
+            ]
+          },
+          {
+            "code": "S7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S7"
+              }
+            ]
+          },
+          {
+            "code": "S9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S9"
+              }
+            ]
+          },
+          {
+            "code": "S10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S10"
+              }
+            ]
+          },
+          {
+            "code": "S13",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S13"
+              }
+            ]
+          },
+          {
+            "code": "S8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S8"
+              }
+            ]
+          },
+          {
+            "code": "S0a",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S0a"
+              }
+            ]
+          },
+          {
+            "code": "S0",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S0"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidScreenedFirst",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "uid",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option uid"
+              }
+            ]
+          },
+          {
+            "code": "S1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S1"
+              }
+            ]
+          },
+          {
+            "code": "S2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S2"
+              }
+            ]
+          },
+          {
+            "code": "S3",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S3"
+              }
+            ]
+          },
+          {
+            "code": "S4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S4"
+              }
+            ]
+          },
+          {
+            "code": "S6",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S6"
+              }
+            ]
+          },
+          {
+            "code": "S11",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S11"
+              }
+            ]
+          },
+          {
+            "code": "S12",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S12"
+              }
+            ]
+          },
+          {
+            "code": "S14",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S14"
+              }
+            ]
+          },
+          {
+            "code": "S5",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S5"
+              }
+            ]
+          },
+          {
+            "code": "S7",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S7"
+              }
+            ]
+          },
+          {
+            "code": "S9",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S9"
+              }
+            ]
+          },
+          {
+            "code": "S10",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S10"
+              }
+            ]
+          },
+          {
+            "code": "S13",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S13"
+              }
+            ]
+          },
+          {
+            "code": "S8",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S8"
+              }
+            ]
+          },
+          {
+            "code": "S0a",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S0a"
+              }
+            ]
+          },
+          {
+            "code": "S0",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S0"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidScreenedHold",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidScreenedImm",
+        "variableType": "singleChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "1",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 1"
+              }
+            ]
+          },
+          {
+            "code": "2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option 2"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "iScreenoutImm",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "iScreenoutSec",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      },
+      {
+        "name": "hidquotafull",
+        "variableType": "multiChoice",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": true,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "options": [
+          {
+            "code": "tot",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option tot"
+              }
+            ]
+          },
+          {
+            "code": "totpost",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option totpost"
+              }
+            ]
+          },
+          {
+            "code": "s2",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s2"
+              }
+            ]
+          },
+          {
+            "code": "s2post",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option s2post"
+              }
+            ]
+          },
+          {
+            "code": "mdd",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option mdd"
+              }
+            ]
+          },
+          {
+            "code": "S4",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S4"
+              }
+            ]
+          },
+          {
+            "code": "S0",
+            "hasOtherField": false,
+            "texts": [
+              {
+                "languageId": 1,
+                "text": "Option S0"
+              }
+            ]
+          }
+        ],
+        "excludeFromReporting": false
+      },
+      {
+        "name": "iQF",
+        "variableType": "info",
+        "isCompound": false,
+        "isBackground": false,
+        "isHidden": false,
+        "isSystemVariable": false,
+        "isUserVariable": false,
+        "excludeFromReporting": false
+      }
+    ],
+    "children": [
+      {
+        "name": "LoopT1",
+        "keys": [
+          {
+            "name": "LoopT1",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1"
+              },
+              {
+                "code": "2"
+              }
+            ],
+            "excludeFromReporting": false
+          }
+        ],
+        "variables": [
+          {
+            "name": "Q4_INTRO",
+            "variableType": "info",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false
+          },
+          {
+            "name": "TPPIntro",
+            "variableType": "info",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T1x1",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x2",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x3",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x4",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x5",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x6",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x7",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x8",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x9",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1x10",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T1Ex",
+            "variableType": "multiChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T1",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": true,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              },
+              {
+                "code": "2",
+                "hasOtherField": false
+              },
+              {
+                "code": "3",
+                "hasOtherField": false
+              },
+              {
+                "code": "4",
+                "hasOtherField": false
+              },
+              {
+                "code": "5",
+                "hasOtherField": false
+              },
+              {
+                "code": "6",
+                "hasOtherField": false
+              },
+              {
+                "code": "7",
+                "hasOtherField": false
+              },
+              {
+                "code": "8",
+                "hasOtherField": false
+              },
+              {
+                "code": "9",
+                "hasOtherField": false
+              },
+              {
+                "code": "10",
+                "hasOtherField": false
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T2x1",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x2",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x3",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x4",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x5",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x6",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x7",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x8",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x9",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2x10",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T2Ex",
+            "variableType": "multiChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T2",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": true,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              },
+              {
+                "code": "2",
+                "hasOtherField": false
+              },
+              {
+                "code": "3",
+                "hasOtherField": false
+              },
+              {
+                "code": "4",
+                "hasOtherField": false
+              },
+              {
+                "code": "5",
+                "hasOtherField": false
+              },
+              {
+                "code": "6",
+                "hasOtherField": false
+              },
+              {
+                "code": "7",
+                "hasOtherField": false
+              },
+              {
+                "code": "8",
+                "hasOtherField": false
+              },
+              {
+                "code": "9",
+                "hasOtherField": false
+              },
+              {
+                "code": "10",
+                "hasOtherField": false
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T3",
+            "variableType": "singleChoice",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              },
+              {
+                "code": "5",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 5"
+                  }
+                ]
+              },
+              {
+                "code": "6",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 6"
+                  }
+                ]
+              },
+              {
+                "code": "7",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 7"
+                  }
+                ]
+              },
+              {
+                "code": "8",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 8"
+                  }
+                ]
+              },
+              {
+                "code": "9",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 9"
+                  }
+                ]
+              },
+              {
+                "code": "10",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 10"
+                  }
+                ]
+              },
+              {
+                "code": "11",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 11"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T4",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T5",
+            "variableType": "numeric",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "precision": 2,
+            "scale": 2,
+            "excludeFromReporting": false,
+            "lowerNumericLimit": 0.0,
+            "lowerLimitType": "inclusive",
+            "upperNumericLimit": 100.0,
+            "upperLimitType": "inclusive",
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T6",
+            "variableType": "multiChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              },
+              {
+                "code": "5",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 5"
+                  }
+                ]
+              },
+              {
+                "code": "6",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 6"
+                  }
+                ]
+              },
+              {
+                "code": "7",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 7"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T7",
+            "variableType": "singleChoice",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              },
+              {
+                "code": "5",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 5"
+                  }
+                ]
+              },
+              {
+                "code": "6",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 6"
+                  }
+                ]
+              },
+              {
+                "code": "7",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 7"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              },
+              {
+                "code": "2",
+                "hasOtherField": false
+              },
+              {
+                "code": "3",
+                "hasOtherField": false
+              },
+              {
+                "code": "4",
+                "hasOtherField": false
+              },
+              {
+                "code": "5",
+                "hasOtherField": false
+              },
+              {
+                "code": "6",
+                "hasOtherField": false
+              },
+              {
+                "code": "7",
+                "hasOtherField": false
+              },
+              {
+                "code": "8",
+                "hasOtherField": false
+              },
+              {
+                "code": "9",
+                "hasOtherField": false
+              },
+              {
+                "code": "10",
+                "hasOtherField": false
+              },
+              {
+                "code": "11",
+                "hasOtherField": false
+              },
+              {
+                "code": "12",
+                "hasOtherField": false
+              },
+              {
+                "code": "96",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T7b",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T9",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T10x1",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x2",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x3",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x4",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x5",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x6",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x7",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x8",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x9",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10x10",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "excludeFromReporting": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "T10Ex",
+            "variableType": "multiChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "T10",
+            "variableType": "text",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": true,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              },
+              {
+                "code": "2",
+                "hasOtherField": false
+              },
+              {
+                "code": "3",
+                "hasOtherField": false
+              },
+              {
+                "code": "4",
+                "hasOtherField": false
+              },
+              {
+                "code": "5",
+                "hasOtherField": false
+              },
+              {
+                "code": "6",
+                "hasOtherField": false
+              },
+              {
+                "code": "7",
+                "hasOtherField": false
+              },
+              {
+                "code": "8",
+                "hasOtherField": false
+              },
+              {
+                "code": "9",
+                "hasOtherField": false
+              },
+              {
+                "code": "10",
+                "hasOtherField": false
+              }
+            ],
+            "excludeFromReporting": false
+          }
+        ]
+      },
+      {
+        "name": "LpPSPrices",
+        "keys": [
+          {
+            "name": "LpPSPrices",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1"
+              },
+              {
+                "code": "2"
+              },
+              {
+                "code": "3"
+              },
+              {
+                "code": "4"
+              },
+              {
+                "code": "5"
+              }
+            ],
+            "excludeFromReporting": false
+          }
+        ],
+        "variables": [
+          {
+            "name": "dLpPSItr",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              },
+              {
+                "code": "5",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 5"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "P6",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              },
+              {
+                "code": "5",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 5"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "P7",
+            "variableType": "numeric",
+            "isCompound": true,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "precision": 2,
+            "scale": 2,
+            "excludeFromReporting": false,
+            "lowerNumericLimit": 0.0,
+            "lowerLimitType": "inclusive",
+            "upperNumericLimit": 100.0,
+            "upperLimitType": "inclusive",
+            "fields": [
+              {
+                "code": "1",
+                "hasOtherField": false
+              }
+            ]
+          },
+          {
+            "name": "P8",
+            "variableType": "multiChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": false,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              },
+              {
+                "code": "3",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 3"
+                  }
+                ]
+              },
+              {
+                "code": "4",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 4"
+                  }
+                ]
+              },
+              {
+                "code": "5",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 5"
+                  }
+                ]
+              },
+              {
+                "code": "6",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 6"
+                  }
+                ]
+              },
+              {
+                "code": "7",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 7"
+                  }
+                ]
+              },
+              {
+                "code": "96",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 96"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          },
+          {
+            "name": "dPSResponseType",
+            "variableType": "singleChoice",
+            "isCompound": false,
+            "isBackground": false,
+            "isHidden": true,
+            "isSystemVariable": false,
+            "isUserVariable": false,
+            "options": [
+              {
+                "code": "1",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 1"
+                  }
+                ]
+              },
+              {
+                "code": "2",
+                "hasOtherField": false,
+                "texts": [
+                  {
+                    "languageId": 1,
+                    "text": "Option 2"
+                  }
+                ]
+              }
+            ],
+            "excludeFromReporting": false
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "self": "https://example.invalid/synthetic/schema"
+  }
+}

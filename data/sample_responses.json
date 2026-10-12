@@ -1,0 +1,3275 @@
+{
+  "itemCount": 6,
+  "totalCount": 6,
+  "items": [
+    {
+      "ErrorMessage": {
+        "true": [
+          "11",
+          "2"
+        ]
+      },
+      "LoopT1": [
+        {
+          "LoopT1": "2",
+          "T1": {
+            "1": "I would like a little more detail before deciding.",
+            "2": "The information was clear and easy to understand.",
+            "3": "Additional follow-up would be helpful.",
+            "4": "I would like a little more detail before deciding.",
+            "5": "The available options met my needs."
+          },
+          "T10": {
+            "1": "Overall, the experience was positive.",
+            "2": "The process was straightforward and convenient.",
+            "3": "The available options met my needs.",
+            "4": "Overall, the experience was positive."
+          },
+          "T10x1": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T10x2": {
+            "1": "Overall, the experience was positive."
+          },
+          "T10x3": {
+            "1": "The available options met my needs."
+          },
+          "T10x4": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1x1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T1x2": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T1x3": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1x4": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T1x5": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2": {
+            "1": "Additional follow-up would be helpful.",
+            "10": "I would like a little more detail before deciding.",
+            "2": "The process was straightforward and convenient.",
+            "3": "The available options met my needs.",
+            "4": "Overall, the experience was positive.",
+            "5": "The process was straightforward and convenient.",
+            "6": "The available options met my needs.",
+            "7": "Overall, the experience was positive.",
+            "8": "The process was straightforward and convenient.",
+            "9": "The available options met my needs."
+          },
+          "T2x1": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2x10": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x2": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x3": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x4": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2x5": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x6": {
+            "1": "The available options met my needs."
+          },
+          "T2x7": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x8": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x9": {
+            "1": "The available options met my needs."
+          },
+          "T3": {
+            "1": "1"
+          },
+          "T4": "4",
+          "T5": {
+            "1": 2
+          },
+          "T6": {
+            "false": [
+              "6",
+              "4",
+              "2",
+              "7",
+              "2",
+              "7"
+            ],
+            "true": [
+              "3",
+              "1",
+              "6",
+              "4",
+              "6",
+              "4",
+              "2"
+            ]
+          },
+          "T7": {
+            "1": "5",
+            "10": "7",
+            "11": "6",
+            "12": "5",
+            "2": "4",
+            "3": "3",
+            "4": "2",
+            "5": "1",
+            "6": "7",
+            "7": "6",
+            "8": "5",
+            "9": "4",
+            "96": "7",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "2",
+          "T9": "2"
+        },
+        {
+          "LoopT1": "2",
+          "T1": {
+            "1": "The available options met my needs.",
+            "10": "Overall, the experience was positive.",
+            "2": "Overall, the experience was positive.",
+            "3": "The information was clear and easy to understand.",
+            "4": "Additional follow-up would be helpful.",
+            "5": "I would like a little more detail before deciding.",
+            "6": "The information was clear and easy to understand.",
+            "7": "Additional follow-up would be helpful.",
+            "8": "I would like a little more detail before deciding.",
+            "9": "The information was clear and easy to understand."
+          },
+          "T10": {
+            "1": "The information was clear and easy to understand.",
+            "2": "Additional follow-up would be helpful.",
+            "3": "I would like a little more detail before deciding.",
+            "4": "The information was clear and easy to understand."
+          },
+          "T10x1": {
+            "1": "The available options met my needs."
+          },
+          "T10x2": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T10x3": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T10x4": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1x1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T1x10": {
+            "1": "The available options met my needs."
+          },
+          "T1x2": {
+            "1": "The available options met my needs."
+          },
+          "T1x3": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1x4": {
+            "1": "Overall, the experience was positive."
+          },
+          "T1x5": {
+            "1": "The available options met my needs."
+          },
+          "T1x6": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1x7": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T1x8": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1x9": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2": {
+            "1": "The information was clear and easy to understand.",
+            "10": "The available options met my needs.",
+            "2": "Additional follow-up would be helpful.",
+            "3": "I would like a little more detail before deciding.",
+            "4": "The information was clear and easy to understand.",
+            "5": "Additional follow-up would be helpful.",
+            "6": "I would like a little more detail before deciding.",
+            "7": "The information was clear and easy to understand.",
+            "8": "Additional follow-up would be helpful.",
+            "9": "I would like a little more detail before deciding."
+          },
+          "T2x1": {
+            "1": "The available options met my needs."
+          },
+          "T2x10": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x2": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x3": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x4": {
+            "1": "The available options met my needs."
+          },
+          "T2x5": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x6": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2x7": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x8": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x9": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T3": {
+            "1": "2"
+          },
+          "T4": "4",
+          "T5": {
+            "1": 2
+          },
+          "T6": {
+            "false": [
+              "1",
+              "6",
+              "4",
+              "2",
+              "7",
+              "5"
+            ],
+            "true": [
+              "5",
+              "3",
+              "1",
+              "6",
+              "4",
+              "2",
+              "7"
+            ]
+          },
+          "T7": {
+            "1": "1",
+            "10": "3",
+            "11": "2",
+            "12": "1",
+            "2": "7",
+            "3": "6",
+            "4": "5",
+            "5": "4",
+            "6": "3",
+            "7": "2",
+            "8": "1",
+            "9": "7",
+            "96": "3",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "2",
+          "T9": "2"
+        }
+      ],
+      "LpPSPrices": [
+        {
+          "LpPSPrices": "3",
+          "P6": "5",
+          "P7": {
+            "1": 2
+          },
+          "P8": {
+            "96$other": "Other response detail provided for this demo record.",
+            "false": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "96"
+            ],
+            "true": [
+              "6",
+              "7",
+              "96",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          "dLpPSItr": "3",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "5",
+          "P6": "2",
+          "P7": {
+            "1": 2
+          },
+          "P8": {
+            "96$other": "Other response detail provided for this demo record.",
+            "false": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "96"
+            ],
+            "true": [
+              "6",
+              "7",
+              "96",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          "dLpPSItr": "5",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "5",
+          "P6": "4",
+          "P7": {
+            "1": 2
+          },
+          "P8": {
+            "96$other": "Other response detail provided for this demo record.",
+            "false": [
+              "5",
+              "6",
+              "7",
+              "96",
+              "1"
+            ],
+            "true": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          "dLpPSItr": "2",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "2",
+          "P6": "1",
+          "P7": {
+            "1": 2
+          },
+          "P8": {
+            "96$other": "Other response detail provided for this demo record.",
+            "false": [
+              "5",
+              "6",
+              "7",
+              "96",
+              "1"
+            ],
+            "true": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          "dLpPSItr": "4",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "4",
+          "P6": "3",
+          "dLpPSItr": "4",
+          "dPSResponseType": "1"
+        }
+      ],
+      "P1": {
+        "1": 1.25,
+        "2": 4.25,
+        "3": 3.75,
+        "4": 3.25
+      },
+      "P10": {
+        "1": 3.75
+      },
+      "P11": {
+        "1": 4.25
+      },
+      "P12": {
+        "1": "Overall, the experience was positive.",
+        "10": "I would like a little more detail before deciding.",
+        "2": "The process was straightforward and convenient.",
+        "3": "The available options met my needs.",
+        "4": "Overall, the experience was positive.",
+        "5": "The process was straightforward and convenient.",
+        "6": "The available options met my needs.",
+        "7": "Overall, the experience was positive.",
+        "8": "The process was straightforward and convenient.",
+        "9": "The available options met my needs."
+      },
+      "P12x1": {
+        "1": "I would like a little more detail before deciding."
+      },
+      "P12x10": {
+        "1": "Overall, the experience was positive."
+      },
+      "P12x2": {
+        "1": "Additional follow-up would be helpful."
+      },
+      "P12x3": {
+        "1": "The information was clear and easy to understand."
+      },
+      "P12x4": {
+        "1": "The process was straightforward and convenient."
+      },
+      "P12x5": {
+        "1": "Overall, the experience was positive."
+      },
+      "P12x6": {
+        "1": "The available options met my practical needs."
+      },
+      "P12x7": {
+        "1": "The process was straightforward and convenient."
+      },
+      "P12x8": {
+        "1": "Overall, the experience was positive."
+      },
+      "P12x9": {
+        "1": "The available options met my needs."
+      },
+      "P2": {
+        "1": 1.75
+      },
+      "P3": "2",
+      "P9": {
+        "1": 3.75
+      },
+      "PCurrencyHidden": "1",
+      "PP1": "1",
+      "PP2": "3",
+      "PP3": "1",
+      "PP4": "3",
+      "PP5": "1",
+      "Q1": {
+        "1": 2
+      },
+      "Q10": {
+        "96$other": "Other response detail provided for this demo record.",
+        "false": [
+          "1",
+          "10",
+          "7",
+          "4",
+          "1",
+          "10",
+          "7",
+          "4",
+          "1",
+          "10",
+          "8"
+        ],
+        "true": [
+          "5",
+          "2",
+          "11",
+          "8",
+          "5",
+          "2",
+          "11",
+          "8",
+          "5",
+          "2"
+        ]
+      },
+      "Q11": "8",
+      "Q12": {
+        "1": 2,
+        "2": 1,
+        "3": 5,
+        "4": 4,
+        "5": 3,
+        "6": 2,
+        "7": 1
+      },
+      "Q17": "1",
+      "Q18": {
+        "1": "1"
+      },
+      "Q19": {
+        "1": "2",
+        "2": "1",
+        "3": "7"
+      },
+      "Q2": {
+        "1": 4
+      },
+      "Q20": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "5": 1,
+        "6": 5,
+        "7": 4,
+        "8": 3,
+        "96": 4,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q21": {
+        "1": 2
+      },
+      "Q3": "5",
+      "Q4": {
+        "1": 3,
+        "2": 2,
+        "3": 4,
+        "4": 3
+      },
+      "Q5": "96",
+      "Q5.96$other": "Other response detail provided for this demo record.",
+      "Q6": {
+        "1": 5
+      },
+      "Q7Dk": {
+        "false": [
+          "99"
+        ],
+        "true": [
+          "99"
+        ]
+      },
+      "Q7Mx": {
+        "1": 5,
+        "2": 4,
+        "3": 3
+      },
+      "Q7Sk": {
+        "1": 3,
+        "2": 2,
+        "3": 1,
+        "4": 5
+      },
+      "Q7Tk": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2
+      },
+      "Q9": "1",
+      "S0": "4",
+      "S0a": "1",
+      "S0b": "1",
+      "S0c": "1",
+      "S0d": {
+        "true": [
+          "2",
+          "1"
+        ]
+      },
+      "S1": "2",
+      "S10": {
+        "1": 2,
+        "2": 1,
+        "3": 5,
+        "4": 4,
+        "96": 1,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "S11": "2",
+      "S12": "2",
+      "S13": {
+        "1": 3
+      },
+      "S14": "2",
+      "S2": "2",
+      "S3": "2",
+      "S4": "1",
+      "S5": {
+        "1": 2
+      },
+      "S6": "8",
+      "S7": {
+        "1": 1
+      },
+      "S8": {
+        "1": 3
+      },
+      "S9": {
+        "1": 5
+      },
+      "T11": "1",
+      "T12": "2",
+      "T13": {
+        "1": "6",
+        "2": "5",
+        "3": "4",
+        "4": "3",
+        "5": "2",
+        "6": "1",
+        "7": "7",
+        "8": "6",
+        "96": "1"
+      },
+      "T14": {
+        "1": "2",
+        "2": "2",
+        "3": "2",
+        "4": "2",
+        "5": "2",
+        "6": "2",
+        "7": "2"
+      },
+      "T15": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "T16": {
+        "1": 1
+      },
+      "T17": "4",
+      "T18": {
+        "1": 3
+      },
+      "T18Dk": {
+        "false": [
+          "1"
+        ],
+        "true": [
+          "1"
+        ]
+      },
+      "T19": {
+        "96$other": "Other response detail provided for this demo record.",
+        "false": [
+          "5",
+          "6",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "true": [
+          "1",
+          "2",
+          "6",
+          "7",
+          "96",
+          "1",
+          "2"
+        ]
+      },
+      "T20": {
+        "1": 1,
+        "2": 5,
+        "3": 4
+      },
+      "T21": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "T23": {
+        "1": 2
+      },
+      "T24": "4",
+      "T24New": {
+        "1": "4",
+        "2": "3",
+        "3": "2",
+        "4": "1",
+        "5": "5",
+        "6": "4",
+        "7": "3",
+        "8": "2",
+        "96": "3",
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "bgLinkStatus": "2",
+      "bgSource": "2",
+      "dPSAllPunch": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "5",
+        "5": "4"
+      },
+      "dPSPriceOrder": {
+        "1": "2",
+        "2": "1",
+        "3": "5",
+        "4": "4",
+        "5": "3"
+      },
+      "dPSPriceShown": {
+        "true": [
+          "3",
+          "1",
+          "4",
+          "2",
+          "5"
+        ]
+      },
+      "first_question_on_last_page_displayed": "The process was straightforward and convenient.",
+      "hAPPENDIX": "4",
+      "hBrowser": "The process was straightforward and convenient.",
+      "hBrowserType": "I would like a little more detail before deciding.",
+      "hBrowserVersion": "Overall, the experience was positive.",
+      "hDeviceTypeMain": "1",
+      "hIPAddress": "Overall, the experience was positive.",
+      "hIPFlag": "1",
+      "hPunch": "2",
+      "hSRMode": "4",
+      "hScreenResolution": "The process was straightforward and convenient.",
+      "hidLOI": 3.75,
+      "hidLOISec": 2.75,
+      "hidQueDropout": "2025-01-02T08:33:00Z",
+      "hidSurveyEnd": "2025-01-02T08:11:00Z",
+      "hidSurveyStart": "2025-01-02T08:33:00Z",
+      "hidquerystring": "The available options met my needs.",
+      "hidredirectlink": "Overall, the experience was positive.",
+      "hidrespurl": "Additional follow-up would be helpful.",
+      "hidsource": "2",
+      "hiduserid": "Overall, the experience was positive.",
+      "interview_end": "2025-01-02T08:28:00Z",
+      "interview_start": "2025-01-02T08:00:00Z",
+      "l": "31",
+      "last_touched": "2025-01-02T08:22:00Z",
+      "lastchannel": 4,
+      "lastcomplete": "2025-01-02T08:01:00Z",
+      "lastdevicetype": 5,
+      "lastrenderingmode": 5,
+      "respid": 100001,
+      "responseid": 100001,
+      "status": "complete",
+      "tStart": "2025-01-02T08:48:00Z"
+    },
+    {
+      "responseid": 100002,
+      "respid": 100002,
+      "status": "screened",
+      "interview_start": "2025-01-03T08:07:00Z",
+      "interview_end": "2025-01-03T08:35:00Z",
+      "lastchannel": 5,
+      "lastdevicetype": 1,
+      "lastrenderingmode": 1,
+      "last_touched": "2025-01-03T08:29:00Z",
+      "lastcomplete": "2025-01-03T08:08:00Z",
+      "first_question_on_last_page_displayed": "I would like a little more detail before deciding.",
+      "hiduserid": "Additional follow-up would be helpful.",
+      "hidredirectlink": "Additional follow-up would be helpful.",
+      "bgSource": "3",
+      "hidsource": "3",
+      "bgLinkStatus": "1",
+      "hidrespurl": "The available options met my needs.",
+      "hidquerystring": "The information was clear and easy to understand.",
+      "l": "18",
+      "ErrorMessage": {
+        "true": [
+          "12",
+          "3"
+        ]
+      },
+      "S0": "1",
+      "S0a": "2",
+      "S0b": "2",
+      "S0c": "2",
+      "S0d": {
+        "true": [
+          "1",
+          "2"
+        ]
+      },
+      "S1": "1",
+      "S2": "1",
+      "S3": "1",
+      "S4": "2",
+      "S5": {
+        "1": 3
+      },
+      "S6": "1",
+      "S7": {
+        "1": 2
+      },
+      "S8": {
+        "1": 4
+      },
+      "S9": {
+        "1": 1
+      },
+      "S10": {
+        "1": 3,
+        "2": 2,
+        "3": 1,
+        "4": 5,
+        "96": 2,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "S11": "1",
+      "S12": "1",
+      "S13": {
+        "1": 4
+      },
+      "S14": "1",
+      "Q1": {
+        "1": 3
+      },
+      "Q2": {
+        "1": 5
+      },
+      "Q3": "6",
+      "Q4": {
+        "1": 4,
+        "2": 3,
+        "3": 5,
+        "4": 4
+      },
+      "Q5": "1",
+      "Q5.96$other": "Other response detail provided for this demo record.",
+      "Q6": {
+        "1": 1
+      },
+      "Q7Mx": {
+        "1": 1,
+        "2": 5,
+        "3": 4
+      },
+      "Q7Dk": {
+        "false": [
+          "99"
+        ]
+      },
+      "Q9": "2",
+      "Q10": {
+        "true": [
+          "6",
+          "3",
+          "96"
+        ],
+        "false": [
+          "2",
+          "11",
+          "8",
+          "5",
+          "2",
+          "11",
+          "8",
+          "5",
+          "2"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q11": "9",
+      "Q12": {
+        "1": 3,
+        "2": 2,
+        "3": 1,
+        "4": 5,
+        "5": 4,
+        "6": 3,
+        "7": 2
+      },
+      "Q17": "2",
+      "Q18": {
+        "1": "2"
+      },
+      "Q19": {
+        "1": "3",
+        "2": "2",
+        "3": "1"
+      },
+      "Q20": {
+        "1": 1,
+        "2": 5,
+        "3": 4,
+        "4": 3,
+        "5": 2,
+        "6": 1,
+        "7": 5,
+        "8": 4,
+        "96": 5,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q21": {
+        "1": 3
+      },
+      "T11": "2",
+      "T12": "3",
+      "T24New": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2",
+        "5": "1",
+        "6": "5",
+        "7": "4",
+        "8": "3",
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T13": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4",
+        "5": "3",
+        "6": "2",
+        "7": "1",
+        "8": "7"
+      },
+      "T14": {
+        "1": "1",
+        "2": "1",
+        "3": "1",
+        "4": "1",
+        "5": "1",
+        "6": "1",
+        "7": "1"
+      },
+      "T15": {
+        "1": 5,
+        "2": 4,
+        "3": 3
+      },
+      "T16": {
+        "1": 2
+      },
+      "T17": "1",
+      "T18": {
+        "1": 4
+      },
+      "T18Dk": {
+        "false": [
+          "1"
+        ]
+      },
+      "T19": {
+        "true": [
+          "2",
+          "3",
+          "7"
+        ],
+        "false": [
+          "6",
+          "7",
+          "3",
+          "4",
+          "5"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T20": {
+        "1": 2,
+        "2": 1,
+        "3": 5
+      },
+      "T21": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "T23": {
+        "1": 3
+      },
+      "T24": "1",
+      "hAPPENDIX": "1",
+      "PCurrencyHidden": "2",
+      "P1": {
+        "1": 1.75,
+        "2": 1.25,
+        "3": 4.25,
+        "4": 3.75
+      },
+      "P2": {
+        "1": 2.25
+      },
+      "P3": "1",
+      "PP1": "2",
+      "PP2": "4",
+      "PP3": "2",
+      "PP4": "4",
+      "PP5": "2",
+      "dPSPriceShown": {
+        "true": [
+          "4",
+          "2"
+        ]
+      },
+      "dPSAllPunch": {
+        "1": "1",
+        "2": "5",
+        "3": "4",
+        "4": "1",
+        "5": "5"
+      },
+      "dPSPriceOrder": {
+        "1": "3",
+        "2": "2"
+      },
+      "P9": {
+        "1": 4.25
+      },
+      "P10": {
+        "1": 4.25
+      },
+      "P11": {
+        "1": 1.25
+      },
+      "P12x1": {
+        "1": "Overall, the experience was positive."
+      },
+      "P12x2": {
+        "1": "The available options met my needs."
+      },
+      "P12x3": {
+        "1": "The process was straightforward and convenient."
+      },
+      "P12": {
+        "1": "Additional follow-up would be helpful.",
+        "2": "I would like a little more detail before deciding.",
+        "3": "The information was clear and easy to understand."
+      },
+      "hidQueDropout": "2025-01-03T08:40:00Z",
+      "hidLOI": 4.25,
+      "hidLOISec": 3.25,
+      "hidSurveyStart": "2025-01-03T08:40:00Z",
+      "hidSurveyEnd": "2025-01-03T08:18:00Z",
+      "tStart": "2025-01-03T08:05:00Z",
+      "hBrowserType": "Overall, the experience was positive.",
+      "hBrowserVersion": "Additional follow-up would be helpful.",
+      "hBrowser": "I would like a little more detail before deciding.",
+      "hIPAddress": "Additional follow-up would be helpful.",
+      "hIPFlag": "2",
+      "hScreenResolution": "I would like a little more detail before deciding.",
+      "hSRMode": "1",
+      "hDeviceTypeMain": "2",
+      "LoopT1": [
+        {
+          "LoopT1": "1",
+          "T1x1": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2": {
+            "1": "The available options met my needs."
+          },
+          "T3": {
+            "1": "2"
+          },
+          "T4": "1",
+          "T5": {
+            "1": 3
+          },
+          "T6": {
+            "true": [
+              "4",
+              "2",
+              "7",
+              "5"
+            ],
+            "false": [
+              "7",
+              "5",
+              "3"
+            ]
+          },
+          "T7": {
+            "1": "6",
+            "2": "5",
+            "3": "4",
+            "4": "3",
+            "5": "2",
+            "6": "1",
+            "7": "7",
+            "8": "6",
+            "9": "5",
+            "10": "1",
+            "11": "7",
+            "12": "6",
+            "96": "1",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "1",
+          "T9": "1",
+          "T10x1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T10x2": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T10x3": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T10": {
+            "1": "Additional follow-up would be helpful.",
+            "2": "I would like a little more detail before deciding.",
+            "3": "The information was clear and easy to understand."
+          }
+        },
+        {
+          "LoopT1": "1",
+          "T1x1": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T3": {
+            "1": "3"
+          },
+          "T4": "1",
+          "T5": {
+            "1": 3
+          },
+          "T6": {
+            "true": [
+              "6",
+              "4",
+              "2",
+              "7"
+            ],
+            "false": [
+              "2",
+              "7",
+              "5"
+            ]
+          },
+          "T7": {
+            "1": "2",
+            "2": "1",
+            "3": "7",
+            "4": "6",
+            "5": "5",
+            "6": "4",
+            "7": "3",
+            "8": "2",
+            "9": "1",
+            "10": "4",
+            "11": "3",
+            "12": "2",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "1",
+          "T9": "1",
+          "T10x1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T10x2": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T10x3": {
+            "1": "Overall, the experience was positive."
+          },
+          "T10": {
+            "1": "The process was straightforward and convenient.",
+            "2": "The available options met my needs.",
+            "3": "Overall, the experience was positive."
+          }
+        }
+      ],
+      "LpPSPrices": [
+        {
+          "LpPSPrices": "4",
+          "dLpPSItr": "4",
+          "P6": "1",
+          "P7": {
+            "1": 3
+          },
+          "P8": {
+            "true": [
+              "7",
+              "96",
+              "1",
+              "2"
+            ],
+            "false": [
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "1",
+          "dLpPSItr": "1",
+          "P6": "3",
+          "dPSResponseType": "2"
+        }
+      ]
+    },
+    {
+      "responseid": 100003,
+      "respid": 100003,
+      "status": "incomplete",
+      "interview_start": "2025-01-04T08:14:00Z",
+      "interview_end": "2025-01-04T08:42:00Z",
+      "lastchannel": 1,
+      "lastdevicetype": 2,
+      "lastrenderingmode": 2,
+      "last_touched": "2025-01-04T08:36:00Z",
+      "lastcomplete": "2025-01-04T08:15:00Z",
+      "first_question_on_last_page_displayed": "Overall, the experience was positive.",
+      "hiduserid": "The available options met my needs.",
+      "hidredirectlink": "The available options met my needs.",
+      "bgSource": "4",
+      "hidsource": "4",
+      "bgLinkStatus": "2",
+      "hidrespurl": "The information was clear and easy to understand.",
+      "hidquerystring": "The process was straightforward and convenient.",
+      "l": "1046",
+      "ErrorMessage": {
+        "true": [
+          "1",
+          "6"
+        ]
+      },
+      "S0": "2",
+      "S0a": "1",
+      "S0b": "1",
+      "S0c": "1",
+      "S0d": {
+        "true": [
+          "2",
+          "1"
+        ]
+      },
+      "S1": "2",
+      "S2": "2",
+      "S3": "2",
+      "S4": "3",
+      "S5": {
+        "1": 4
+      },
+      "S6": "2",
+      "S7": {
+        "1": 3
+      },
+      "S9": {
+        "1": 2
+      },
+      "S10": {
+        "1": 4,
+        "2": 3,
+        "3": 2,
+        "4": 1,
+        "96": 3,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "S11": "2",
+      "S12": "2",
+      "S13": {
+        "1": 5
+      },
+      "S14": "2",
+      "Q1": {
+        "1": 4
+      },
+      "Q2": {
+        "1": 1
+      },
+      "Q3": "7",
+      "Q4": {
+        "1": 5,
+        "2": 4,
+        "3": 1,
+        "4": 5
+      },
+      "Q5": "2",
+      "Q5.96$other": "Other response detail provided for this demo record.",
+      "Q6": {
+        "1": 2
+      },
+      "Q7Sk": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2
+      },
+      "Q7Dk": {
+        "false": [
+          "99"
+        ]
+      },
+      "Q9": "3",
+      "Q10": {
+        "true": [
+          "7",
+          "4"
+        ],
+        "false": [
+          "3",
+          "96",
+          "9",
+          "6",
+          "3",
+          "96",
+          "9",
+          "6",
+          "3",
+          "96"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q11": "10",
+      "Q12": {
+        "1": 4,
+        "2": 3,
+        "3": 2,
+        "4": 1,
+        "5": 5,
+        "6": 4,
+        "7": 3
+      },
+      "Q17": "3",
+      "Q18": {
+        "1": "3"
+      },
+      "Q19": {
+        "1": "4",
+        "2": "3",
+        "3": "2"
+      },
+      "Q20": {
+        "1": 2,
+        "2": 1,
+        "3": 5,
+        "4": 4,
+        "5": 3,
+        "6": 2,
+        "7": 1,
+        "8": 5,
+        "96": 1,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q21": {
+        "1": 4
+      },
+      "T11": "3",
+      "T12": "4",
+      "T24New": {
+        "1": "1",
+        "2": "5",
+        "3": "4",
+        "4": "3",
+        "5": "2",
+        "6": "1",
+        "7": "5",
+        "8": "4",
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T13": {
+        "1": "1",
+        "2": "7",
+        "3": "6",
+        "4": "5",
+        "5": "4",
+        "6": "3",
+        "7": "2",
+        "8": "1"
+      },
+      "T14": {
+        "1": "2",
+        "2": "2",
+        "3": "2",
+        "4": "2",
+        "5": "2",
+        "6": "2",
+        "7": "2"
+      },
+      "T15": {
+        "1": 1,
+        "2": 5,
+        "3": 4
+      },
+      "T16": {
+        "1": 3
+      },
+      "T17": "2",
+      "T18": {
+        "1": 5
+      },
+      "T18Dk": {
+        "false": [
+          "1"
+        ]
+      },
+      "T19": {
+        "true": [
+          "3",
+          "4"
+        ],
+        "false": [
+          "7",
+          "96",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T20": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "T21": {
+        "1": 5,
+        "2": 4,
+        "3": 3
+      },
+      "T23": {
+        "1": 4
+      },
+      "T24": "2",
+      "hAPPENDIX": "2",
+      "PCurrencyHidden": "3",
+      "P1": {
+        "1": 2.25,
+        "2": 1.75,
+        "3": 1.25,
+        "4": 4.25
+      },
+      "P2": {
+        "1": 2.75
+      },
+      "P3": "2",
+      "PP1": "3",
+      "PP2": "1",
+      "PP3": "3",
+      "PP4": "1",
+      "PP5": "3",
+      "dPSPriceShown": {
+        "true": [
+          "5",
+          "3",
+          "1",
+          "4"
+        ]
+      },
+      "dPSAllPunch": {
+        "1": "2",
+        "2": "1",
+        "3": "5",
+        "4": "2",
+        "5": "1"
+      },
+      "dPSPriceOrder": {
+        "1": "4",
+        "2": "3",
+        "3": "2",
+        "4": "1"
+      },
+      "P9": {
+        "1": 1.25
+      },
+      "P10": {
+        "1": 1.25
+      },
+      "P11": {
+        "1": 1.75
+      },
+      "P12x1": {
+        "1": "Additional follow-up would be helpful."
+      },
+      "P12x2": {
+        "1": "The information was clear and easy to understand."
+      },
+      "P12": {
+        "1": "The available options met my needs.",
+        "2": "Overall, the experience was positive."
+      },
+      "hidQueDropout": "2025-01-04T08:47:00Z",
+      "hidLOI": 1.25,
+      "hidLOISec": 3.75,
+      "hidSurveyStart": "2025-01-04T08:47:00Z",
+      "hidSurveyEnd": "2025-01-04T08:25:00Z",
+      "tStart": "2025-01-04T08:12:00Z",
+      "hBrowserType": "Additional follow-up would be helpful.",
+      "hBrowserVersion": "The available options met my needs.",
+      "hBrowser": "Overall, the experience was positive.",
+      "hIPAddress": "The available options met my needs.",
+      "hIPFlag": "1",
+      "hScreenResolution": "Overall, the experience was positive.",
+      "hSRMode": "2",
+      "hDeviceTypeMain": "3",
+      "LoopT1": [
+        {
+          "LoopT1": "2",
+          "T1x1": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T1": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x1": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T3": {
+            "1": "3"
+          },
+          "T4": "2",
+          "T5": {
+            "1": 4
+          },
+          "T6": {
+            "true": [
+              "5",
+              "3",
+              "1",
+              "6",
+              "1",
+              "6"
+            ],
+            "false": [
+              "1"
+            ]
+          },
+          "T7": {
+            "1": "7",
+            "2": "6",
+            "3": "5",
+            "4": "4",
+            "5": "3",
+            "6": "2",
+            "7": "1",
+            "8": "7",
+            "9": "6",
+            "10": "2",
+            "11": "1",
+            "12": "7",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "2",
+          "T9": "2",
+          "T10x1": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T10": {
+            "1": "The available options met my needs."
+          }
+        },
+        {
+          "LoopT1": "2",
+          "T1x1": {
+            "1": "The available options met my needs."
+          },
+          "T1": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x1": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T3": {
+            "1": "4"
+          },
+          "T4": "2",
+          "T5": {
+            "1": 4
+          },
+          "T6": {
+            "true": [
+              "7",
+              "5",
+              "3",
+              "1",
+              "6",
+              "4"
+            ],
+            "false": [
+              "3"
+            ]
+          },
+          "T7": {
+            "1": "3",
+            "2": "2",
+            "3": "1",
+            "4": "7",
+            "5": "6",
+            "6": "5",
+            "7": "4",
+            "8": "3",
+            "9": "2",
+            "10": "5",
+            "11": "4",
+            "12": "3",
+            "96": "5",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "2",
+          "T9": "2",
+          "T10x1": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T10": {
+            "1": "I would like a little more detail before deciding."
+          }
+        }
+      ],
+      "LpPSPrices": [
+        {
+          "LpPSPrices": "5",
+          "dLpPSItr": "5",
+          "P6": "2",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "2",
+          "dLpPSItr": "2",
+          "P6": "4",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "2",
+          "dLpPSItr": "4",
+          "P6": "1",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "4",
+          "dLpPSItr": "1",
+          "P6": "3",
+          "dPSResponseType": "1"
+        }
+      ]
+    },
+    {
+      "responseid": 100004,
+      "respid": 100004,
+      "status": "quotafull",
+      "interview_start": "2025-01-05T08:21:00Z",
+      "interview_end": "2025-01-05T08:49:00Z",
+      "lastchannel": 2,
+      "lastdevicetype": 3,
+      "lastrenderingmode": 3,
+      "last_touched": "2025-01-05T08:43:00Z",
+      "lastcomplete": "2025-01-05T08:22:00Z",
+      "first_question_on_last_page_displayed": "Additional follow-up would be helpful.",
+      "hiduserid": "The information was clear and easy to understand.",
+      "hidredirectlink": "The information was clear and easy to understand.",
+      "bgSource": "1",
+      "hidsource": "1",
+      "bgLinkStatus": "1",
+      "hidrespurl": "The process was straightforward and convenient.",
+      "hidquerystring": "I would like a little more detail before deciding.",
+      "l": "2058",
+      "ErrorMessage": {
+        "true": [
+          "2",
+          "7"
+        ]
+      },
+      "S0": "3",
+      "S0a": "2",
+      "S0b": "2",
+      "S0c": "2",
+      "S0d": {
+        "true": [
+          "1",
+          "2"
+        ]
+      },
+      "S1": "1",
+      "S2": "1",
+      "S3": "1",
+      "S4": "1",
+      "S5": {
+        "1": 5
+      },
+      "S6": "3",
+      "S7": {
+        "1": 4
+      },
+      "S8": {
+        "1": 1
+      },
+      "S9": {
+        "1": 3
+      },
+      "S10": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "96": 4,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "S11": "1",
+      "S12": "1",
+      "S13": {
+        "1": 1
+      },
+      "S14": "1",
+      "Q1": {
+        "1": 5
+      },
+      "Q2": {
+        "1": 2
+      },
+      "Q3": "1",
+      "Q4": {
+        "1": 1,
+        "2": 5,
+        "3": 2,
+        "4": 1
+      },
+      "Q6": {
+        "1": 3
+      },
+      "Q9": "4",
+      "Q10": {
+        "true": [
+          "8",
+          "5",
+          "2",
+          "11",
+          "8",
+          "5",
+          "2"
+        ],
+        "false": [
+          "4",
+          "1",
+          "10",
+          "7",
+          "4"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q11": "11",
+      "Q12": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "5": 1,
+        "6": 5,
+        "7": 4
+      },
+      "Q17": "1",
+      "Q18": {
+        "1": "4"
+      },
+      "Q19": {
+        "1": "5",
+        "2": "4",
+        "3": "3"
+      },
+      "Q20": {
+        "1": 3,
+        "2": 2,
+        "3": 1,
+        "4": 5,
+        "5": 4,
+        "6": 3,
+        "7": 2,
+        "8": 1,
+        "96": 2,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q21": {
+        "1": 5
+      },
+      "T11": "1",
+      "T12": "1",
+      "T24New": {
+        "1": "2",
+        "2": "1",
+        "3": "5",
+        "4": "4",
+        "5": "3",
+        "6": "2",
+        "7": "1",
+        "8": "5",
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T13": {
+        "1": "2",
+        "2": "1",
+        "3": "7",
+        "4": "6",
+        "5": "5",
+        "6": "4",
+        "7": "3",
+        "8": "2"
+      },
+      "T14": {
+        "1": "1",
+        "2": "1",
+        "3": "1",
+        "4": "1",
+        "5": "1",
+        "6": "1",
+        "7": "1"
+      },
+      "T15": {
+        "1": 2,
+        "2": 1,
+        "3": 5
+      },
+      "T16": {
+        "1": 4
+      },
+      "T17": "3",
+      "T18": {
+        "1": 1
+      },
+      "T18Dk": {
+        "false": [
+          "1"
+        ]
+      },
+      "T19": {
+        "true": [
+          "4",
+          "5",
+          "1"
+        ],
+        "false": [
+          "96",
+          "1",
+          "5",
+          "6",
+          "7"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T20": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "T21": {
+        "1": 1,
+        "2": 5,
+        "3": 4
+      },
+      "T23": {
+        "1": 5
+      },
+      "T24": "3",
+      "hAPPENDIX": "3",
+      "PCurrencyHidden": "4",
+      "P1": {
+        "1": 2.75,
+        "2": 2.25,
+        "3": 1.75,
+        "4": 1.25
+      },
+      "P2": {
+        "1": 3.25
+      },
+      "P3": "1",
+      "PP1": "4",
+      "PP2": "2",
+      "PP3": "4",
+      "PP4": "2",
+      "PP5": "4",
+      "dPSPriceShown": {
+        "true": [
+          "1",
+          "4",
+          "2",
+          "5",
+          "3"
+        ]
+      },
+      "dPSAllPunch": {
+        "1": "3",
+        "2": "2",
+        "3": "1",
+        "4": "3",
+        "5": "2"
+      },
+      "dPSPriceOrder": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2",
+        "5": "1"
+      },
+      "P9": {
+        "1": 1.75
+      },
+      "P10": {
+        "1": 1.75
+      },
+      "P11": {
+        "1": 2.25
+      },
+      "P12x1": {
+        "1": "The available options met my needs."
+      },
+      "P12x2": {
+        "1": "The process was straightforward and convenient."
+      },
+      "P12x3": {
+        "1": "Overall, the experience was positive."
+      },
+      "P12": {
+        "1": "The information was clear and easy to understand.",
+        "2": "Additional follow-up would be helpful.",
+        "3": "I would like a little more detail before deciding."
+      },
+      "hidQueDropout": "2025-01-05T08:04:00Z",
+      "hidLOI": 1.75,
+      "hidLOISec": 4.25,
+      "hidSurveyStart": "2025-01-05T08:04:00Z",
+      "hidSurveyEnd": "2025-01-05T08:32:00Z",
+      "tStart": "2025-01-05T08:19:00Z",
+      "hBrowserType": "The available options met my needs.",
+      "hBrowserVersion": "The information was clear and easy to understand.",
+      "hBrowser": "Additional follow-up would be helpful.",
+      "hIPAddress": "The information was clear and easy to understand.",
+      "hIPFlag": "2",
+      "hScreenResolution": "Additional follow-up would be helpful.",
+      "hSRMode": "3",
+      "hDeviceTypeMain": "4",
+      "LoopT1": [
+        {
+          "LoopT1": "1",
+          "T1x1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T1x2": {
+            "1": "The available options met my needs."
+          },
+          "T1x3": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1": {
+            "1": "The available options met my needs.",
+            "2": "Overall, the experience was positive.",
+            "3": "The process was straightforward and convenient."
+          },
+          "T2x1": {
+            "1": "The available options met my needs."
+          },
+          "T2x2": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x3": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2": {
+            "1": "The process was straightforward and convenient.",
+            "2": "Additional follow-up would be helpful.",
+            "3": "I would like a little more detail before deciding."
+          },
+          "T3": {
+            "1": "4"
+          },
+          "T4": "3",
+          "T5": {
+            "1": 5
+          },
+          "T6": {
+            "true": [
+              "6",
+              "4",
+              "2"
+            ],
+            "false": [
+              "2",
+              "7",
+              "5",
+              "3"
+            ]
+          },
+          "T7": {
+            "1": "1",
+            "2": "7",
+            "3": "6",
+            "4": "5",
+            "5": "4",
+            "6": "3",
+            "7": "2",
+            "8": "1",
+            "9": "7",
+            "10": "3",
+            "11": "2",
+            "12": "1",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "1",
+          "T9": "1"
+        },
+        {
+          "LoopT1": "1",
+          "T1x1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T1x2": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T1x3": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1": {
+            "1": "I would like a little more detail before deciding.",
+            "2": "The information was clear and easy to understand.",
+            "3": "Overall, the experience was positive."
+          },
+          "T2x1": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2x2": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x3": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2": {
+            "1": "Overall, the experience was positive.",
+            "2": "The process was straightforward and convenient.",
+            "3": "The available options met my needs."
+          },
+          "T3": {
+            "1": "5"
+          },
+          "T4": "3",
+          "T5": {
+            "1": 5
+          },
+          "T6": {
+            "true": [
+              "1",
+              "6"
+            ],
+            "false": [
+              "4",
+              "2",
+              "7",
+              "5",
+              "3"
+            ]
+          },
+          "T7": {
+            "1": "4",
+            "2": "3",
+            "3": "2",
+            "4": "1",
+            "5": "7",
+            "6": "6",
+            "7": "5",
+            "8": "4",
+            "9": "3",
+            "10": "6",
+            "11": "5",
+            "12": "4",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "1",
+          "T9": "1"
+        }
+      ],
+      "LpPSPrices": [
+        {
+          "LpPSPrices": "1",
+          "dLpPSItr": "1",
+          "P6": "3",
+          "P7": {
+            "1": 5
+          },
+          "P8": {
+            "true": [
+              "1",
+              "2",
+              "3"
+            ],
+            "false": [
+              "5",
+              "6",
+              "7",
+              "96",
+              "1"
+            ],
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "3",
+          "dLpPSItr": "3",
+          "P6": "5",
+          "P7": {
+            "1": 5
+          },
+          "P8": {
+            "true": [
+              "1",
+              "2",
+              "3"
+            ],
+            "false": [
+              "5",
+              "6",
+              "7",
+              "96",
+              "1"
+            ],
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "3",
+          "dLpPSItr": "5",
+          "P6": "2",
+          "P7": {
+            "1": 5
+          },
+          "P8": {
+            "true": [
+              "4",
+              "5",
+              "6"
+            ],
+            "false": [
+              "96",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "5",
+          "dLpPSItr": "2",
+          "P6": "4",
+          "P7": {
+            "1": 5
+          },
+          "P8": {
+            "true": [
+              "4",
+              "5",
+              "6"
+            ],
+            "false": [
+              "96",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "2",
+          "dLpPSItr": "2",
+          "P6": "1",
+          "dPSResponseType": "2"
+        }
+      ]
+    },
+    {
+      "responseid": 100005,
+      "respid": 100005,
+      "status": "error",
+      "interview_start": "2025-01-06T08:28:00Z",
+      "interview_end": "2025-01-06T08:06:00Z",
+      "lastchannel": 3,
+      "lastdevicetype": 4,
+      "lastrenderingmode": 4,
+      "last_touched": "2025-01-06T08:00:00Z",
+      "lastcomplete": "2025-01-06T08:29:00Z",
+      "first_question_on_last_page_displayed": "The available options met my needs.",
+      "hiduserid": "The process was straightforward and convenient.",
+      "hidredirectlink": "The process was straightforward and convenient.",
+      "bgSource": "2",
+      "hidsource": "2",
+      "bgLinkStatus": "2",
+      "hidrespurl": "I would like a little more detail before deciding.",
+      "hidquerystring": "Overall, the experience was positive.",
+      "l": "31",
+      "ErrorMessage": {
+        "true": [
+          "3",
+          "8"
+        ]
+      },
+      "S0": "4",
+      "S0a": "1",
+      "S0b": "1",
+      "S0c": "1",
+      "S0d": {
+        "true": [
+          "2",
+          "1"
+        ]
+      },
+      "S1": "2",
+      "S2": "2",
+      "S3": "2",
+      "S4": "2",
+      "S5": {
+        "1": 1
+      },
+      "S6": "4",
+      "S7": {
+        "1": 5
+      },
+      "S8": {
+        "1": 2
+      },
+      "S9": {
+        "1": 4
+      },
+      "S10": {
+        "1": 1,
+        "2": 5,
+        "3": 4,
+        "4": 3,
+        "96": 5,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "S11": "2",
+      "S12": "2",
+      "S13": {
+        "1": 2
+      },
+      "S14": "2",
+      "Q1": {
+        "1": 1
+      },
+      "Q2": {
+        "1": 3
+      },
+      "Q3": "2",
+      "Q4": {
+        "1": 2,
+        "2": 1,
+        "3": 3,
+        "4": 2
+      },
+      "Q5": "1",
+      "Q5.96$other": "Other response detail provided for this demo record.",
+      "Q6": {
+        "1": 4
+      },
+      "Q9": "5",
+      "Q10": {
+        "true": [
+          "9",
+          "6",
+          "3",
+          "96",
+          "9",
+          "6",
+          "3",
+          "96",
+          "9",
+          "6"
+        ],
+        "false": [
+          "5",
+          "2"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q11": "12",
+      "Q12": {
+        "1": 1,
+        "2": 5,
+        "3": 4,
+        "4": 3,
+        "5": 2,
+        "6": 1,
+        "7": 5
+      },
+      "Q17": "2",
+      "Q18": {
+        "1": "5"
+      },
+      "Q19": {
+        "1": "6",
+        "2": "5",
+        "3": "4"
+      },
+      "Q20": {
+        "1": 4,
+        "2": 3,
+        "3": 2,
+        "4": 1,
+        "5": 5,
+        "6": 4,
+        "7": 3,
+        "8": 2,
+        "96": 3,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q21": {
+        "1": 1
+      },
+      "T11": "2",
+      "T12": "2",
+      "T24New": {
+        "1": "3",
+        "2": "2",
+        "3": "1",
+        "4": "5",
+        "5": "4",
+        "6": "3",
+        "7": "2",
+        "8": "1",
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T13": {
+        "1": "3",
+        "2": "2",
+        "3": "1",
+        "4": "7",
+        "5": "6",
+        "6": "5",
+        "7": "4",
+        "8": "3"
+      },
+      "T14": {
+        "1": "2",
+        "2": "2",
+        "3": "2",
+        "4": "2",
+        "5": "2",
+        "6": "2",
+        "7": "2"
+      },
+      "T15": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "T16": {
+        "1": 5
+      },
+      "T17": "4",
+      "T18": {
+        "1": 2
+      },
+      "T18Dk": {
+        "false": [
+          "1"
+        ]
+      },
+      "T19": {
+        "true": [
+          "5"
+        ],
+        "false": [
+          "1",
+          "2",
+          "6",
+          "7",
+          "96",
+          "1",
+          "2"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T20": {
+        "1": 5,
+        "2": 4,
+        "3": 3
+      },
+      "T21": {
+        "1": 2,
+        "2": 1,
+        "3": 5
+      },
+      "T23": {
+        "1": 1
+      },
+      "T24": "4",
+      "hAPPENDIX": "4",
+      "PCurrencyHidden": "1",
+      "P1": {
+        "1": 3.25,
+        "2": 2.75,
+        "3": 2.25,
+        "4": 1.75
+      },
+      "P2": {
+        "1": 3.75
+      },
+      "P3": "2",
+      "PP1": "1",
+      "PP2": "3",
+      "PP3": "1",
+      "PP4": "3",
+      "PP5": "1",
+      "dPSPriceShown": {
+        "true": [
+          "2",
+          "5",
+          "3"
+        ]
+      },
+      "dPSAllPunch": {
+        "1": "4",
+        "2": "3",
+        "3": "2",
+        "4": "4",
+        "5": "3"
+      },
+      "dPSPriceOrder": {
+        "1": "1",
+        "2": "5",
+        "3": "4"
+      },
+      "P9": {
+        "1": 2.25
+      },
+      "P10": {
+        "1": 2.25
+      },
+      "P11": {
+        "1": 2.75
+      },
+      "P12x1": {
+        "1": "The information was clear and easy to understand."
+      },
+      "P12x2": {
+        "1": "I would like a little more detail before deciding."
+      },
+      "P12x3": {
+        "1": "Additional follow-up would be helpful."
+      },
+      "P12": {
+        "1": "The process was straightforward and convenient.",
+        "2": "The available options met my needs.",
+        "3": "Overall, the experience was positive."
+      },
+      "hidQueDropout": "2025-01-06T08:11:00Z",
+      "hidLOI": 2.25,
+      "hidLOISec": 1.25,
+      "hidSurveyStart": "2025-01-06T08:11:00Z",
+      "hidSurveyEnd": "2025-01-06T08:39:00Z",
+      "tStart": "2025-01-06T08:26:00Z",
+      "hBrowserType": "The information was clear and easy to understand.",
+      "hBrowserVersion": "The process was straightforward and convenient.",
+      "hBrowser": "The available options met my needs.",
+      "hIPAddress": "The process was straightforward and convenient.",
+      "hIPFlag": "1",
+      "hScreenResolution": "The available options met my needs.",
+      "hSRMode": "4",
+      "hDeviceTypeMain": "1",
+      "LoopT1": [
+        {
+          "LoopT1": "2",
+          "T1x1": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1x2": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T1": {
+            "1": "The information was clear and easy to understand.",
+            "2": "Additional follow-up would be helpful."
+          },
+          "T2x1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x2": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2": {
+            "1": "I would like a little more detail before deciding.",
+            "2": "The available options met my needs."
+          },
+          "T3": {
+            "1": "5"
+          },
+          "T4": "4",
+          "T5": {
+            "1": 1
+          },
+          "T6": {
+            "true": [
+              "7"
+            ],
+            "false": [
+              "3",
+              "1",
+              "6",
+              "4",
+              "6",
+              "4"
+            ]
+          },
+          "T7": {
+            "1": "2",
+            "2": "1",
+            "3": "7",
+            "4": "6",
+            "5": "5",
+            "6": "4",
+            "7": "3",
+            "8": "2",
+            "9": "1",
+            "10": "4",
+            "11": "3",
+            "12": "2",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "2",
+          "T9": "2",
+          "T10x1": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T10x2": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T10x3": {
+            "1": "Overall, the experience was positive."
+          },
+          "T10": {
+            "1": "The process was straightforward and convenient.",
+            "2": "The available options met my needs.",
+            "3": "Overall, the experience was positive."
+          }
+        },
+        {
+          "LoopT1": "2",
+          "T1x1": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1x2": {
+            "1": "Overall, the experience was positive."
+          },
+          "T1": {
+            "1": "Overall, the experience was positive.",
+            "2": "The process was straightforward and convenient."
+          },
+          "T2x1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x2": {
+            "1": "The available options met my needs."
+          },
+          "T2": {
+            "1": "Additional follow-up would be helpful.",
+            "2": "I would like a little more detail before deciding."
+          },
+          "T3": {
+            "1": "6"
+          },
+          "T4": "4",
+          "T5": {
+            "1": 1
+          },
+          "T6": {
+            "true": [
+              "2"
+            ],
+            "false": [
+              "5",
+              "3",
+              "1",
+              "6",
+              "4",
+              "2"
+            ]
+          },
+          "T7": {
+            "1": "5",
+            "2": "4",
+            "3": "3",
+            "4": "2",
+            "5": "1",
+            "6": "7",
+            "7": "6",
+            "8": "5",
+            "9": "4",
+            "10": "7",
+            "11": "6",
+            "12": "5",
+            "96": "7",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "2",
+          "T9": "2",
+          "T10x1": {
+            "1": "Overall, the experience was positive."
+          },
+          "T10x2": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T10": {
+            "1": "Additional follow-up would be helpful.",
+            "2": "I would like a little more detail before deciding."
+          }
+        }
+      ],
+      "LpPSPrices": [
+        {
+          "LpPSPrices": "2",
+          "dLpPSItr": "2",
+          "P6": "4",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "4",
+          "dLpPSItr": "4",
+          "P6": "1",
+          "dPSResponseType": "1"
+        },
+        {
+          "LpPSPrices": "4",
+          "dLpPSItr": "1",
+          "P6": "3",
+          "dPSResponseType": "1"
+        }
+      ]
+    },
+    {
+      "responseid": 100006,
+      "respid": 100006,
+      "status": "complete",
+      "interview_start": "2025-01-07T08:35:00Z",
+      "interview_end": "2025-01-07T08:13:00Z",
+      "lastchannel": 4,
+      "lastdevicetype": 5,
+      "lastrenderingmode": 5,
+      "last_touched": "2025-01-07T08:07:00Z",
+      "lastcomplete": "2025-01-07T08:36:00Z",
+      "first_question_on_last_page_displayed": "The information was clear and easy to understand.",
+      "hidredirectlink": "I would like a little more detail before deciding.",
+      "hPunch": "3",
+      "bgSource": "3",
+      "hidsource": "3",
+      "bgLinkStatus": "1",
+      "hidrespurl": "Overall, the experience was positive.",
+      "hidquerystring": "Additional follow-up would be helpful.",
+      "l": "18",
+      "ErrorMessage": {
+        "true": [
+          "6",
+          "9"
+        ]
+      },
+      "S0": "1",
+      "S0a": "2",
+      "S0b": "2",
+      "S0c": "2",
+      "S0d": {
+        "true": [
+          "1",
+          "2"
+        ]
+      },
+      "S1": "1",
+      "S2": "1",
+      "S3": "1",
+      "S4": "3",
+      "S5": {
+        "1": 2
+      },
+      "S6": "5",
+      "S7": {
+        "1": 1
+      },
+      "S8": {
+        "1": 3
+      },
+      "S9": {
+        "1": 5
+      },
+      "S10": {
+        "1": 2,
+        "2": 1,
+        "3": 5,
+        "4": 4,
+        "96": 1,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "S11": "1",
+      "S12": "1",
+      "S13": {
+        "1": 3
+      },
+      "S14": "1",
+      "Q1": {
+        "1": 2
+      },
+      "Q2": {
+        "1": 4
+      },
+      "Q3": "3",
+      "Q4": {
+        "1": 3,
+        "2": 2,
+        "3": 4,
+        "4": 3
+      },
+      "Q5": "2",
+      "Q5.96$other": "Other response detail provided for this demo record.",
+      "Q6": {
+        "1": 5
+      },
+      "Q7Dk": {
+        "true": [
+          "99"
+        ]
+      },
+      "Q9": "1",
+      "Q10": {
+        "true": [
+          "10",
+          "7",
+          "4",
+          "1"
+        ],
+        "false": [
+          "6",
+          "3",
+          "96",
+          "9",
+          "6",
+          "3",
+          "96",
+          "9"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q12": {
+        "1": 2,
+        "2": 1,
+        "3": 5,
+        "4": 4,
+        "5": 3,
+        "6": 2,
+        "7": 1
+      },
+      "Q17": "3",
+      "Q18": {
+        "1": "6"
+      },
+      "Q19": {
+        "1": "7",
+        "2": "6",
+        "3": "5"
+      },
+      "Q20": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "5": 1,
+        "6": 5,
+        "7": 4,
+        "8": 3,
+        "96": 4,
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "Q21": {
+        "1": 2
+      },
+      "T11": "3",
+      "T12": "3",
+      "T24New": {
+        "1": "4",
+        "2": "3",
+        "3": "2",
+        "4": "1",
+        "5": "5",
+        "6": "4",
+        "7": "3",
+        "8": "2",
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T13": {
+        "1": "4",
+        "2": "3",
+        "3": "2",
+        "4": "1",
+        "5": "7",
+        "6": "6",
+        "7": "5",
+        "8": "4"
+      },
+      "T14": {
+        "1": "1",
+        "2": "1",
+        "3": "1",
+        "4": "1",
+        "5": "1",
+        "6": "1",
+        "7": "1"
+      },
+      "T15": {
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "T16": {
+        "1": 1
+      },
+      "T17": "1",
+      "T18": {
+        "1": 3
+      },
+      "T18Dk": {
+        "false": [
+          "1"
+        ]
+      },
+      "T19": {
+        "true": [
+          "6",
+          "7",
+          "3"
+        ],
+        "false": [
+          "2",
+          "3",
+          "7",
+          "96",
+          "1"
+        ],
+        "96$other": "Other response detail provided for this demo record."
+      },
+      "T20": {
+        "1": 1,
+        "2": 5,
+        "3": 4
+      },
+      "T21": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "T23": {
+        "1": 2
+      },
+      "T24": "1",
+      "hAPPENDIX": "1",
+      "PCurrencyHidden": "2",
+      "P1": {
+        "1": 3.75,
+        "2": 3.25,
+        "3": 2.75,
+        "4": 2.25
+      },
+      "P2": {
+        "1": 4.25
+      },
+      "P3": "1",
+      "PP1": "2",
+      "PP2": "4",
+      "PP3": "2",
+      "PP4": "4",
+      "PP5": "2",
+      "dPSPriceShown": {
+        "true": [
+          "3",
+          "1",
+          "4"
+        ]
+      },
+      "dPSAllPunch": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "5",
+        "5": "4"
+      },
+      "dPSPriceOrder": {
+        "1": "2",
+        "2": "1",
+        "3": "5"
+      },
+      "P9": {
+        "1": 2.75
+      },
+      "P10": {
+        "1": 2.75
+      },
+      "P11": {
+        "1": 3.25
+      },
+      "P12x1": {
+        "1": "The process was straightforward and convenient."
+      },
+      "P12x2": {
+        "1": "Overall, the experience was positive."
+      },
+      "P12x3": {
+        "1": "The available options met my needs."
+      },
+      "P12x4": {
+        "1": "The information was clear and easy to understand."
+      },
+      "P12x5": {
+        "1": "I would like a little more detail before deciding."
+      },
+      "P12x6": {
+        "1": "Additional follow-up would be helpful."
+      },
+      "P12x7": {
+        "1": "The information was clear and easy to understand."
+      },
+      "P12x8": {
+        "1": "I would like a little more detail before deciding."
+      },
+      "P12x9": {
+        "1": "Additional follow-up would be helpful."
+      },
+      "P12x10": {
+        "1": "I would like a little more detail before deciding."
+      },
+      "P12": {
+        "1": "I would like a little more detail before deciding.",
+        "2": "The information was clear and easy to understand.",
+        "3": "Additional follow-up would be helpful.",
+        "4": "I would like a little more detail before deciding.",
+        "5": "The information was clear and easy to understand.",
+        "6": "Additional follow-up would be helpful.",
+        "7": "I would like a little more detail before deciding.",
+        "8": "The information was clear and easy to understand.",
+        "9": "Additional follow-up would be helpful.",
+        "10": "The process was straightforward and convenient."
+      },
+      "hidQueDropout": "2025-01-07T08:18:00Z",
+      "hidLOI": 2.75,
+      "hidLOISec": 1.75,
+      "hidSurveyStart": "2025-01-07T08:18:00Z",
+      "hidSurveyEnd": "2025-01-07T08:46:00Z",
+      "tStart": "2025-01-07T08:33:00Z",
+      "hBrowserType": "The process was straightforward and convenient.",
+      "hBrowserVersion": "I would like a little more detail before deciding.",
+      "hBrowser": "The information was clear and easy to understand.",
+      "hIPAddress": "I would like a little more detail before deciding.",
+      "hIPFlag": "2",
+      "hScreenResolution": "The information was clear and easy to understand.",
+      "hSRMode": "1",
+      "hDeviceTypeMain": "2",
+      "LoopT1": [
+        {
+          "LoopT1": "1",
+          "T1x1": {
+            "1": "The available options met my needs."
+          },
+          "T1x2": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1x3": {
+            "1": "Overall, the experience was positive."
+          },
+          "T1x4": {
+            "1": "The available options met my needs."
+          },
+          "T1x5": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1": {
+            "1": "The process was straightforward and convenient.",
+            "2": "The available options met my needs.",
+            "3": "Overall, the experience was positive.",
+            "4": "The process was straightforward and convenient.",
+            "5": "Additional follow-up would be helpful."
+          },
+          "T2x1": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x2": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x3": {
+            "1": "The available options met my needs."
+          },
+          "T2x4": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x5": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x6": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x7": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x8": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2x9": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x10": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2": {
+            "1": "Overall, the experience was positive.",
+            "2": "The information was clear and easy to understand.",
+            "3": "Additional follow-up would be helpful.",
+            "4": "I would like a little more detail before deciding.",
+            "5": "The information was clear and easy to understand.",
+            "6": "Additional follow-up would be helpful.",
+            "7": "I would like a little more detail before deciding.",
+            "8": "The information was clear and easy to understand.",
+            "9": "Additional follow-up would be helpful.",
+            "10": "The process was straightforward and convenient."
+          },
+          "T3": {
+            "1": "6"
+          },
+          "T4": "1",
+          "T5": {
+            "1": 2
+          },
+          "T6": {
+            "true": [
+              "1",
+              "6"
+            ],
+            "false": [
+              "4",
+              "2",
+              "7",
+              "5",
+              "7"
+            ]
+          },
+          "T7": {
+            "1": "3",
+            "2": "2",
+            "3": "1",
+            "4": "7",
+            "5": "6",
+            "6": "5",
+            "7": "4",
+            "8": "3",
+            "9": "2",
+            "10": "5",
+            "11": "4",
+            "12": "3",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "1",
+          "T9": "1"
+        },
+        {
+          "LoopT1": "1",
+          "T1x1": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T1x2": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1x3": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T1x4": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T1x5": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1x6": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T1x7": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T1x8": {
+            "1": "Overall, the experience was positive."
+          },
+          "T1x9": {
+            "1": "The available options met my needs."
+          },
+          "T1x10": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T1": {
+            "1": "Additional follow-up would be helpful.",
+            "2": "I would like a little more detail before deciding.",
+            "3": "The available options met my needs.",
+            "4": "Overall, the experience was positive.",
+            "5": "The process was straightforward and convenient.",
+            "6": "The available options met my needs.",
+            "7": "Overall, the experience was positive.",
+            "8": "The process was straightforward and convenient.",
+            "9": "The available options met my needs.",
+            "10": "I would like a little more detail before deciding."
+          },
+          "T2x1": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x2": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x3": {
+            "1": "I would like a little more detail before deciding."
+          },
+          "T2x4": {
+            "1": "Additional follow-up would be helpful."
+          },
+          "T2x5": {
+            "1": "The information was clear and easy to understand."
+          },
+          "T2x6": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x7": {
+            "1": "Overall, the experience was positive."
+          },
+          "T2x8": {
+            "1": "The available options met my needs."
+          },
+          "T2x9": {
+            "1": "The process was straightforward and convenient."
+          },
+          "T2x10": {
+            "1": "The available options met my needs."
+          },
+          "T2": {
+            "1": "The available options met my needs.",
+            "2": "Overall, the experience was positive.",
+            "3": "The process was straightforward and convenient.",
+            "4": "The available options met my needs.",
+            "5": "Overall, the experience was positive.",
+            "6": "The process was straightforward and convenient.",
+            "7": "The available options met my needs.",
+            "8": "Overall, the experience was positive.",
+            "9": "The process was straightforward and convenient.",
+            "10": "Additional follow-up would be helpful."
+          },
+          "T3": {
+            "1": "7"
+          },
+          "T4": "1",
+          "T5": {
+            "1": 2
+          },
+          "T6": {
+            "true": [
+              "3",
+              "1"
+            ],
+            "false": [
+              "6",
+              "4",
+              "2",
+              "7",
+              "5"
+            ]
+          },
+          "T7": {
+            "1": "6",
+            "2": "5",
+            "3": "4",
+            "4": "3",
+            "5": "2",
+            "6": "1",
+            "7": "7",
+            "8": "6",
+            "9": "5",
+            "10": "1",
+            "11": "7",
+            "12": "6",
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "T7b": "1",
+          "T9": "1"
+        }
+      ],
+      "LpPSPrices": [
+        {
+          "LpPSPrices": "3",
+          "dLpPSItr": "3",
+          "P6": "5",
+          "P7": {
+            "1": 2
+          },
+          "P8": {
+            "true": [
+              "3",
+              "4",
+              "5"
+            ],
+            "false": [
+              "7",
+              "96",
+              "1",
+              "2",
+              "3"
+            ],
+            "96$other": "Other response detail provided for this demo record."
+          },
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "5",
+          "dLpPSItr": "5",
+          "P6": "2",
+          "dPSResponseType": "2"
+        },
+        {
+          "LpPSPrices": "5",
+          "dLpPSItr": "2",
+          "P6": "4",
+          "dPSResponseType": "2"
+        }
+      ]
+    }
+  ],
+  "links": {
+    "self": "https://example.invalid/synthetic/responses"
+  },
+  "pagination": {
+    "offset": 0,
+    "limit": 6,
+    "count": 6,
+    "total": 6
+  }
+}
+

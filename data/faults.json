@@ -1,0 +1,154 @@
+[
+  {
+    "fault_id": "F01",
+    "title": "Allocation slider fails to load on mobile in two languages",
+    "description": "An allocation slider fails to load on mobile in two languages, so people leave it blank",
+    "in_survey": true,
+    "min_n": 30,
+    "target_variable": "Q7Sk",
+    "check_type": "item_non_response",
+    "expected_symptom": {
+      "metric": "missing_rate",
+      "threshold": 0.05,
+      "observed": 0.34,
+      "cluster_conditions": {
+        "device": ["mobile", "1"],
+        "languages": ["1046", "2058"]
+      }
+    },
+    "survey_behavior": {
+      "question": "Q7Sk",
+      "trigger_conditions": {
+        "languages": ["1046", "2058"],
+        "devices": ["mobile", "1"]
+      },
+      "rendered_state": "slider_failed_to_render",
+      "error_message": "Slider widget failed to load due to missing mobile localized resource; no input control visible."
+    },
+    "reproduction_steps": "Open survey with language=1046 or 2058 on mobile device; navigate to Q7Sk; slider input control does not render, allowing respondent to submit empty."
+  },
+  {
+    "fault_id": "F02",
+    "title": "Straightlining on 7-item grid",
+    "description": "A group of respondents give the same answer to all 7 items of a grid",
+    "in_survey": false,
+    "min_n": 1,
+    "target_variable": "T14",
+    "check_type": "straightlining",
+    "expected_symptom": {
+      "metric": "identical_answers_count",
+      "threshold": 7,
+      "sub_items_count": 7
+    },
+    "survey_behavior": null,
+    "reproduction_steps": "Respondent quality issue: fraud/bot answers identical option down all items of T14 grid without reading."
+  },
+  {
+    "fault_id": "F03",
+    "title": "Speeding cluster from one sample source",
+    "description": "A cluster of very fast completions, all from one sample source",
+    "in_survey": false,
+    "min_n": 30,
+    "target_variable": "hidLOI",
+    "check_type": "speeding",
+    "expected_symptom": {
+      "metric": "loi_fraction_of_median",
+      "threshold": 0.4,
+      "source_variable": "bgSource",
+      "affected_source": "3"
+    },
+    "survey_behavior": null,
+    "reproduction_steps": "Sample panel issue: respondents from bgSource=3 complete interview in under 40% of median survey duration."
+  },
+  {
+    "fault_id": "F04",
+    "title": "Numeric question accepts values above declared maximum",
+    "description": "A 0-100 question accepts values above 100",
+    "in_survey": true,
+    "min_n": 1,
+    "target_variable": "S5",
+    "check_type": "range_violation",
+    "expected_symptom": {
+      "declared_min": 0.0,
+      "declared_max": 100.0,
+      "observed_violations": [105.0, 120.0]
+    },
+    "survey_behavior": {
+      "question": "S5",
+      "validation_rule": "Missing client-side upper limit check; permits inputs > 100.0 without triggering error message."
+    },
+    "reproduction_steps": "Navigate to S5; enter value 115.0; survey submits successfully without throwing validation error."
+  },
+  {
+    "fault_id": "F05",
+    "title": "Allocation question does not enforce sum of 100",
+    "description": "An allocation question lets people continue when the parts do not total 100",
+    "in_survey": true,
+    "min_n": 1,
+    "target_variable": "Q7Mx",
+    "check_type": "allocation_sum",
+    "expected_symptom": {
+      "expected_sum": 100.0,
+      "observed_sums": [85.0, 110.0]
+    },
+    "survey_behavior": {
+      "question": "Q7Mx",
+      "validation_rule": "Sum validation script disabled; allows next button click when sum != 100."
+    },
+    "reproduction_steps": "Navigate to Q7Mx; enter parts summing to 85; click next; page advances without error."
+  },
+  {
+    "fault_id": "F06",
+    "title": "Routing skip logic bug routes disqualified respondents into question",
+    "description": "A routing bug sends people into a question they should have skipped",
+    "in_survey": true,
+    "min_n": 50,
+    "target_variable": "Q9",
+    "check_type": "routing_anomaly",
+    "expected_symptom": {
+      "rule": "If S2 == 1, skip Q9 and proceed directly to Q11",
+      "violation": "Respondents with S2 == 1 observed with non-empty Q9 responses."
+    },
+    "survey_behavior": {
+      "source_question": "S2",
+      "target_question": "Q9",
+      "skip_target": "Q11",
+      "routing_fault": "Condition evaluates inverted; sends S2=1 into Q9."
+    },
+    "reproduction_steps": "Set S2=1; click next; survey displays Q9 instead of skipping to Q11."
+  },
+  {
+    "fault_id": "F07",
+    "title": "Pre-selected default option accepted by majority",
+    "description": "One question has a pre-selected default, so most people accept it",
+    "in_survey": false,
+    "min_n": 50,
+    "target_variable": "Q5",
+    "check_type": "degenerate_distribution",
+    "expected_symptom": {
+      "question": "Q5",
+      "dominant_code": "1",
+      "selection_proportion": 0.88,
+      "expected_uniform": 0.33
+    },
+    "survey_behavior": null,
+    "reproduction_steps": "Radio button for option 1 initialized checked by default on page load."
+  },
+  {
+    "fault_id": "F08",
+    "title": "Screener over-rejection in specific market",
+    "description": "The screener rejects far too many people in one market",
+    "in_survey": false,
+    "min_n": 50,
+    "target_variable": "status",
+    "check_type": "disposition_mix",
+    "expected_symptom": {
+      "filter": "l == '1046'",
+      "screened_rate": 0.82,
+      "benchmark_rate": 0.22
+    },
+    "survey_behavior": null,
+    "reproduction_steps": "Screen-out criteria in language 1046 market erroneously excludes high proportions of respondents."
+  }
+]
+
