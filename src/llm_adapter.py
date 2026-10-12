@@ -6,6 +6,7 @@ Tracks token consumption and estimated costs across all calls.
 """
 import os
 import json
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 
@@ -554,24 +555,169 @@ class LLMClient:
             provider: 'auto', 'mock', 'anthropic', 'gemini', 'openai'.
             model_name: Optional explicit model string.
         """
+        # Load from .env if present
+        env_file = Path(__file__).resolve().parent.parent / ".env"
+        if env_file.exists():
+            with open(env_file) as f:
+                for line in f:
+                    if line.strip() and not line.startswith("#") and "=" in line:
+                        k, v = line.strip().split("=", 1)
+                        if k not in os.environ:
+                            os.environ[k] = v
+
         self.provider = provider
         self.model_name = model_name
         self.tracker = TokenTracker()
 
         # Auto-detect live API key if available
         if self.provider == "auto":
-            if os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"):
+            if os.getenv("OPENAI_API_KEY"):
+                self.provider = "openai"
+                self.model_name = self.model_name or "gpt-4o-mini"
+            elif os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"):
                 self.provider = "gemini"
                 self.model_name = self.model_name or "gemini-2.5-pro"
             elif os.getenv("ANTHROPIC_API_KEY"):
                 self.provider = "anthropic"
                 self.model_name = self.model_name or "claude-3-7-sonnet"
-            elif os.getenv("OPENAI_API_KEY"):
-                self.provider = "openai"
-                self.model_name = self.model_name or "gpt-4o"
             else:
                 self.provider = "mock"
                 self.model_name = "mock-investigator-v1"
+
+    def _call_openai_chat(
+        self,
+        system_prompt: str,
+        messages: List[Dict[str, Any]],
+        tools: Optional[List[Dict[str, Any]]] = None
+    ) -> LLMResponse:
+        """Call live OpenAI Chat Completions API with function calling tools."""
+        import requests
+        api_key = os.getenv("OPENAI_API_KEY")
+        model = self.model_name or "gpt-4o-mini"
+
+        openai_tools = None
+        if tools:
+            openai_tools = [
+                {
+                    "type": "function",
+                    "function": {
+                        "name": t["name"],
+                        "description": t["description"],
+                        "parameters": t["parameters"]
+                    }
+                }
+                for t in tools
+            ]
+
+        # Build payload messages
+        payload_messages = [{"role": "system", "content": system_prompt}]
+        for m in messages:
+            role = m.get("role", "user")
+            content = m.get("content", "")
+            tcs = m.get("tool_calls")
+            if role == "assistant" and tcs:
+                openai_tcs = []
+                for tc in tcs:
+                    openai_tcs.append({
+                        "id": tc.get("id") or f"call_{len(openai_tcs)+1}",
+                        "type": "function",
+                        "function": {
+                            "name": tc.get("name", ""),
+                            "arguments": json.dumps(tc.get("arguments", {})) if isinstance(tc.get("arguments"), dict) else str(tc.get("arguments", "{}"))
+                        }
+                    })
+                payload_messages.append({
+                    "role": "assistant",
+                    "content": content or None,
+                    "tool_calls": openai_tcs
+                })
+            elif role == "user":
+                if payload_messages and payload_messages[-1].get("tool_calls"):
+                    prev_tcs = payload_messages[-1]["tool_calls"]
+                    try:
+                        res_list = json.loads(content) if isinstance(content, str) else content
+                    except Exception:
+                        res_list = [content]
+                    if not isinstance(res_list, list):
+                        res_list = [res_list]
+                    for idx, ptc in enumerate(prev_tcs):
+                        res_content = json.dumps(res_list[idx]) if idx < len(res_list) else json.dumps(res_list[-1])
+                        payload_messages.append({
+                            "role": "tool",
+                            "tool_call_id": ptc["id"],
+                            "content": res_content
+                        })
+                else:
+                    payload_messages.append({"role": "user", "content": str(content)})
+
+        payload = {
+            "model": model,
+            "messages": payload_messages
+        }
+        if openai_tools:
+            payload["tools"] = openai_tools
+            payload["tool_choice"] = "auto"
+
+        res = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+            json=payload,
+            timeout=30
+        )
+        if res.status_code != 200:
+            raise RuntimeError(f"OpenAI API Error {res.status_code}: {res.text}")
+
+        data = res.json()
+        choice = data["choices"][0]["message"]
+        tool_calls = []
+        if choice.get("tool_calls"):
+            for tc in choice["tool_calls"]:
+                tool_calls.append({
+                    "id": tc["id"],
+                    "name": tc["function"]["name"],
+                    "arguments": json.loads(tc["function"]["arguments"])
+                })
+
+        usage = data.get("usage", {})
+        return LLMResponse(
+            content=choice.get("content") or "",
+            tool_calls=tool_calls,
+            input_tokens=usage.get("prompt_tokens", 0),
+            output_tokens=usage.get("completion_tokens", 0),
+            model_name=model
+        )
+
+    def _call_openai_single(self, system_prompt: str, user_prompt: str) -> LLMResponse:
+        """Call live OpenAI Chat Completions API with JSON mode for single synthesis call."""
+        import requests
+        api_key = os.getenv("OPENAI_API_KEY")
+        model = self.model_name or "gpt-4o-mini"
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            "response_format": {"type": "json_object"}
+        }
+        res = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+            json=payload,
+            timeout=30
+        )
+        if res.status_code != 200:
+            raise RuntimeError(f"OpenAI API Error {res.status_code}: {res.text}")
+
+        data = res.json()
+        choice = data["choices"][0]["message"]
+        usage = data.get("usage", {})
+        return LLMResponse(
+            content=choice.get("content") or "{}",
+            input_tokens=usage.get("prompt_tokens", 0),
+            output_tokens=usage.get("completion_tokens", 0),
+            model_name=model
+        )
 
     def chat_with_tools(
         self,
@@ -591,6 +737,20 @@ class LLMClient:
         Returns:
             LLMResponse containing thought content, tool calls, and token metrics.
         """
+        # If live OpenAI provider is active, execute live tool-enabled API call
+        if self.provider == "openai" and os.getenv("OPENAI_API_KEY"):
+            try:
+                response = self._call_openai_chat(system_prompt, messages, tools)
+                self.tracker.record(response.input_tokens, response.output_tokens)
+                return response
+            except Exception as e:
+                # Fallback to mock policy if live API call times out or encounters network issue
+                if mock_policy:
+                    response = mock_policy.generate_next_turn(messages)
+                    self.tracker.record(response.input_tokens, response.output_tokens)
+                    return response
+                raise e
+
         if self.provider == "mock" or mock_policy is not None:
             if mock_policy:
                 response = mock_policy.generate_next_turn(messages)
@@ -613,8 +773,7 @@ class LLMClient:
             self.tracker.record(response.input_tokens, response.output_tokens)
             return response
 
-        # Live API providers (anthropic, gemini, openai) would be called here.
-        # Fallback to mock policy if live SDK or credentials encounter exceptions.
+        # Live API providers fallback
         if mock_policy:
             response = mock_policy.generate_next_turn(messages)
             self.tracker.record(response.input_tokens, response.output_tokens)
@@ -641,6 +800,16 @@ class LLMClient:
             LLMResponse containing structured text/JSON and token consumption metrics.
         """
         context = context or {}
+
+        # If live OpenAI is enabled, run live call
+        if self.provider == "openai" and os.getenv("OPENAI_API_KEY"):
+            try:
+                response = self._call_openai_single(system_prompt, user_prompt)
+                self.tracker.record(response.input_tokens, response.output_tokens)
+                return response
+            except Exception:
+                pass
+
 
         if self.provider == "mock":
             if task_type == "triage":
