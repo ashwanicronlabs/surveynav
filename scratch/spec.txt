@@ -1,0 +1,995 @@
+Untitled
+
+SurveyNav REQ-009 Demo — Build
+Reference
+Oct 12, 2026
+
+· ​@Harshita
+
+This is the build spec for a two-day demo that proves we can build autonomous agents for
+Inizio's SurveyNav platform. It covers the background you need, what to build, in what
+order, and what the finished demo has to show. No prior knowledge of market research is
+assumed.
+
+Background
+Inizio Ignite runs market research for pharmaceutical companies. A drug company wants
+to know what doctors think of a new treatment, what would make them prescribe it, or
+what price feels acceptable. Inizio designs a survey, sends it to a few hundred doctors or
+patients across several countries, and hands back the findings.
+A project runs in roughly this order:
+1. Write the questionnaire (a Word document, written by a researcher)
+2. Program it into survey software — the client uses Confirmit
+3. Test it before anyone real sees it
+4. Send it out and collect answers — this period is called fieldwork
+5. Clean the data: remove people who cheated or rushed
+6. Build tables, then charts and a final report
+They are building an internal platform called SurveyNav 2.0 to automate the middle of
+that chain. Their requirements document lists 29 requirements. We were asked one
+question: can we build autonomous agents for them, and have we thought it through
+properly. Our answer is a demo plus a written artifact, and this document is the spec for
+the demo.
+
+What soft launch means
+Rather than send the survey to all 300 people at once, you send it to the first 30 or 50,
+stop, and check the data looks sensible before opening it to everyone.
+
+Page 1 of 17
+
+Untitled
+
+If the survey is broken you find out after 30 wasted responses instead of 300. Without
+that pause you discover the problem at the end, when the budget is spent and the only fix
+is to run the whole thing again. That is why the client cares about it.
+Today a person does this check by eye.
+
+REQ-009, in their words
+Automate explicit soft launch QC checks after initial completes are collected,
+separate from general QC, Joker review and AE workflows.
+Their four acceptance criteria:
+Soft launch mode can be triggered at defined completes per market/wave.
+Automated checks compare expected versus observed routing, quotas,
+terminations, response distributions, missing data and suspicious patterns.
+Output is a soft-launch QC checklist/status with issues, severity and go/no-go
+recommendation.
+Results are separate from general QC/Joker/AE reviews but can reference related
+flags.
+
+The same thing in plain English
+When enough early responses have arrived, the system should wake up on its own, run a
+batch of quality checks over the data, work out what any problems actually mean, and tell
+a human whether it is safe to launch the survey to everyone — with the evidence
+attached.
+Two words in their criteria matter for how we build it. Checklist means the set of checks
+must be fixed and repeatable, so they can prove the same checks ran every time. Go/nogo recommendation means the system advises; a human still decides.
+
+What we are building
+A program that takes a set of survey responses, finds the problems in them, works out
+why each problem is happening, and recommends whether the survey is safe to launch —
+with a human approving the final call.
+
+Page 2 of 17
+
+Untitled
+
+The important part is how it works out the why. A fixed batch of checks finds the
+symptoms. Then an AI agent investigates each symptom on its own: it forms a theory,
+queries the data to test it, throws the theory away if it is wrong, tries another, and stops
+when it is satisfied. Nobody scripts that path. The number of steps is different every time.
+That is the whole claim we are proving. Everything below exists to make that visible on
+screen.
+
+The ten things the demo has to show
+#
+
+What the audience sees
+
+Why it matters
+
+1
+
+339 checks generated straight from the
+client's own schema, none hand-written
+
+Works on any survey with no setup
+
+2
+
+At a small sample, some checks are skipped
+with a stated reason; at a larger sample they
+all run
+
+Statistical honesty — nobody else
+does this
+
+3
+
+The agent decides how many investigations
+to launch, based on what it found
+
+Autonomy, visible
+
+4
+
+Different investigations take different
+numbers of steps
+
+A script cannot do this
+
+5
+
+At least one trace where the agent tries a
+theory, finds nothing, and moves on
+
+Proof it is reasoning, not retrieving
+
+6
+
+An agent finds an oddity in the data, then
+goes and tests it against the survey itself
+
+The moment nobody else has
+
+7
+
+A final checklist with severity and a go/no-go
+recommendation
+
+Their acceptance criterion, word for
+word
+
+8
+
+A score against known answers: "we planted
+8 faults, it found 6, here is why it missed 2"
+
+Credibility
+
+9
+
+Token and cost totals for the run
+
+Shows we thought about the
+economics
+
+10
+
+A complete record of every step taken
+
+The compliance story, made real
+
+If time runs short, protect 2, 5, 6 and 8. Those four are what separate this from a polished
+script. Polish is worth less than any one of them.
+
+Page 3 of 17
+
+Untitled
+
+Architecture
+
+soft-launch QC pipeline · 8 stages, 1 agent
+
+Responses go through a fixed battery of checks. The power gate drops any check the
+sample is too small to support. Triage ranks what is left, and one investigator agent is
+launched per anomaly. Each investigator can walk the survey model to confirm what it
+suspects. The adjudicator collects their conclusions and a human signs off.
+
+Only the highlighted box is an agent
+Everything else is ordinary code or a single model call. That distinction matters and we say
+it out loud in the client artifact, because the fastest way to lose a technical reviewer is to
+draw eight boxes with robot icons on them.
+The test we use: can you say how many model calls a component will make before you
+run it? The check runner makes zero. Triage makes one. The adjudicator makes one. The
+investigator makes somewhere between six and twenty-five, decided as it goes, and that
+is what makes it an agent.
+So the demo ships one agent type, launched as many times as the data demands. Resist
+the urge to inflate that.
+
+Page 4 of 17
+
+Untitled
+
+The data and the fault catalogue
+This part is already built and working. It lives in Documents/Mission management
+agent/surveynav-agents/ .
+File
+
+What it is
+
+data/synthetic_survey_responses_schema.json
+
+The client's real schema. 195 variables,
+2 loop blocks, 5 languages. This is a
+genuine Confirmit export, not
+something we made up
+
+data/faults.json
+
+The 8 planted faults. The shared
+ground truth
+
+src/generate_data.py
+
+Builds fake respondents from the
+schema, then injects the faults
+
+data/responses_n45.json
+
+45 respondents — the underpowered
+run
+
+data/responses_n150.json
+
+150 respondents — the main run
+
+data/ground_truth_n*.json
+
+Which respondent carries which fault,
+for scoring
+
+Regenerate at any size with python src/generate_data.py 150 . The seed is fixed, so the
+same N always produces the same data.
+
+Why there are two sample sizes
+At n=45 several checks are not statistically valid — you cannot judge whether a
+distribution has shifted from 45 people. At n=150 they are. Running both back to back is
+how we demonstrate the power gate, which is one of the four things worth protecting.
+
+The fault catalogue is the most important idea here
+We declare each fault once, in faults.json . Each entry says two things: what it does to
+the data, and what causes it in the survey.
+The data generator reads the first half. The survey model reads the second. That is what
+makes the closed loop honest — when the agent walks the survey and finds the cause, it
+is finding the same fault that produced the symptom, not a staged coincidence. If you
+
+Page 5 of 17
+
+Untitled
+
+build the two independently, the demo is theatre and a sharp reviewer will work that out.
+
+The eight faults
+ID
+
+What it is
+
+In the survey?
+
+Needs n of
+
+F01
+
+An allocation slider fails to load on mobile in two
+languages, so people leave it blank
+
+Yes
+
+30
+
+F02
+
+A group of respondents give the same answer to all
+7 items of a grid
+
+No
+
+1
+
+F03
+
+A cluster of very fast completions, all from one
+sample source
+
+No
+
+30
+
+F04
+
+A 0–100 question accepts values above 100
+
+Yes
+
+1
+
+F05
+
+An allocation question lets people continue when
+the parts do not total 100
+
+Yes
+
+1
+
+F06
+
+A routing bug sends people into a question they
+should have skipped
+
+Yes
+
+50
+
+F07
+
+One question has a pre-selected default, so most
+people accept it
+
+No
+
+50
+
+F08
+
+The screener rejects far too many people in one
+market
+
+No
+
+50
+
+F01 is the one to build the closed-loop demo around. It is invisible in the headline numbers
+and only shows up when you cut the data by language and device — which is exactly the
+investigation we want the audience to watch.
+
+Pieces 1 and 2: the check generator and the power gate
+Piece 1 — the check generator
+No AI here. It reads the schema and writes out the list of checks to run. Nobody
+configures anything.
+This works because the schema already states the rules in machine-readable form. It says
+S5 is a number between 0 and 100 — so a range check writes itself. It says T14 has 7 subitems — so a straightlining check writes itself. Counts measured against the client's actual
+
+Page 6 of 17
+
+Untitled
+
+schema:
+Check
+
+How many
+
+Where it comes from
+
+Item non-response
+
+195
+
+every variable
+
+Degenerate distribution
+
+83
+
+every choice question
+
+Range violation
+
+23
+
+variables with a declared min and max
+
+Straightlining
+
+22
+
+grids with 3 or more items
+
+Allocation does not sum
+
+8
+
+multi-part 0–100 questions
+
+Speeding
+
+1
+
+hidLOI against the median
+
+Duplicate source
+
+2
+
+hIPFlag , hPunch
+
+Device anomaly
+
+2
+
+hDeviceTypeMain , lastdevicetype
+
+Disposition mix
+
+1
+
+status
+
+Script errors
+
+1
+
+ErrorMessage
+
+Dropout point
+
+1
+
+hidQueDropout
+
+339 checks, none hand-written. Print that number on screen — it is the first thing the
+demo should say.
+Two of the client's six named check categories are not buildable: routing conformance
+needs a routing specification that does not exist in the schema, and quota conformance
+needs a quota plan we were never given. Declare both as blocked, with the reason, rather
+than quietly omitting them. Honesty about a gap reads better than a silent hole.
+
+Piece 2 — the power gate
+Also no AI. This is the differentiator almost nobody builds.
+A soft launch has 30 to 50 people. Most distribution-based checks are statistically
+meaningless at that size, and a tool that reports them anyway produces noise and loses
+trust in its first week. So before running, each check is marked valid or not for the current
+sample size.
+
+Page 7 of 17
+
+Untitled
+
+Check type
+
+Valid from
+
+Why
+
+Range violation
+
+n=1
+
+one respondent either broke the rule or did not
+
+Allocation sum
+
+n=1
+
+same
+
+Straightlining
+
+n=1
+
+a pattern within one person's answers
+
+Speeding
+
+n = 30
+
+you need a median to compare against
+
+Item non-response rate
+
+n = 30
+
+a proportion is too wide below this
+
+Disposition mix
+
+n = 50
+
+a proportion across five categories
+
+Routing conformance
+
+n = 50
+
+needs a base size per branch
+
+Quota pace
+
+n = 100
+
+needs a trend, not a snapshot
+
+Distribution shift
+
+n = 200
+
+badly underpowered at soft-launch size
+
+The output must state the suppressions out loud: "27 checks passed, 4 flagged, 9 not yet
+valid at n=45 — re-run at n=100." That one sentence is what makes a research team trust
+the rest of it.
+
+What these two produce
+A list of anomaly records for triage. Keep the shape simple and stable, because the agent
+will read it:
+{
+"check_id": "item_non_response.Q7Sk",
+"check_type": "item_non_response",
+"variable": "Q7Sk",
+"statistic": 0.34,
+"expected": 0.05,
+"n": 150,
+"affected_respondents": [200014, 200031],
+"valid_at_n": true
+}
+
+Page 8 of 17
+
+Untitled
+
+Piece 3: the investigator agent
+This is the only real agent in the demo, and the thing the client is paying attention to.
+Everything else exists to set it up.
+One investigator is launched per anomaly, in parallel. Each is given one anomaly and told
+to find out why it is happening. Nobody tells it how.
+
+Why this is an agent and not a clever prompt
+The model is given tools. It calls one, sees the result, decides what to call next, and keeps
+going until it concludes. The number of steps is not known before the run — one
+investigation might take six calls, another twenty-two. That is the definition we use
+throughout the client artifact, so make sure the demo actually behaves this way.
+The loop is the standard tool-use loop:
+while response.stop_reason == "tool_use":
+results = [run_tool(b) for b in response.content if b.type == "tool_use"]
+messages.append({"role": "assistant", "content": response.content})
+messages.append({"role": "user", "content": results})
+response = client.messages.create(model="claude-opus-5-5", tools=TOOLS,
+messages=messages, ...)
+
+Use claude-opus-5-5 for the demo. The quality of the reasoning trace is the product
+here, and the trace is what the audience reads. Cost is irrelevant at this volume — a whole
+run is under two dollars.
+
+The tools
+Keep the set small and read-only. This is a security boundary as well as a design one, and it
+is a point the client artifact makes.
+Tool
+
+What it does
+
+query_data(filter, group_by, metric)
+
+Aggregate over the responses. The
+workhorse
+
+get_schema(variable)
+
+Look up a question's type, options, limits,
+sub-items
+
+sample_respondents(filter, n)
+
+Pull a handful of full records to eyeball
+
+Page 9 of 17
+
+Untitled
+
+Tool
+
+What it does
+
+walk_survey(language, device,
+target_question)
+
+Step through the survey model as a
+respondent. The closed loop
+
+conclude(cause, confidence, evidence,
+
+Finish and hand back a structured finding
+
+severity)
+
+Make conclude the only way to end. It forces a structured result instead of a paragraph
+you then have to parse.
+
+Guardrails
+Build these on day one, not after something runs away:
+Hard cap of 25 tool calls per investigation. If it hits the cap, it reports what it has with
+low confidence
+Loop detection — the same tool with the same arguments three times means it is
+stuck; stop it
+Result size cap. A query_data that returns 400 rows will fill the context. Truncate to
+the top 20 and say how many were omitted
+Timeout per investigation
+
+Memory, in one paragraph
+Each investigator keeps only its own conversation. Investigators running in parallel do not
+share memory and must not see each other's findings. If one forms a wrong theory, a
+shared scratchpad would spread it to the others. Keep them independent and
+deduplicate afterwards in the adjudicator. Say this in the client artifact too — it is a small
+point that signals real experience.
+
+What a good trace looks like
+This is the target. Real variable names from the client's schema:
+1. Checklist flags Q7Sk item non-response at 34%, expected under 5%
+2. get_schema("Q7Sk") → numeric, 4 parts, 0–100, allocation-style
+3. query_data("Q7Sk", group_by="l") → missing clusters in two languages
+4. query_data("Q7Sk", group_by="hDeviceTypeMain") → and on one device type
+5. Theory: the widget fails on mobile in those languages
+
+Page 10 of 17
+
+Untitled
+
+6. sample_respondents(...) → all reached the question, none answered, all left within a
+minute
+7. walk_survey(language="1046", device="mobile", target="Q7Sk") → the slider
+does not render
+8. conclude(...) → high severity, two of five markets, reproduction steps attached
+
+Getting there will take prompt iteration
+Budget real time for this on day 2 — it is where the hours actually go, not in writing the
+code. Two things to push for in the system prompt:
+State your theory before you test it. Without this the trace is a list of queries and
+reads like a script
+If a theory does not hold, say so and move on. A visible dead end is one of the four
+things we most want on screen, and the model will not produce one unless you ask for
+it
+
+Pieces 4 and 5: the survey model and the adjudicator
+Piece 4 — the survey model
+A small state machine, roughly fifty lines, standing in for the real survey. Around ten
+questions, not the full 195.
+Do not use a browser. No Playwright, no real Confirmit. In production the walker drives a
+real browser, and the client artifact says so plainly. For a live demo a browser is pure risk:
+slow, flaky, and dependent on whatever machine you are presenting from. A state
+machine runs in milliseconds and never fails in front of an audience.
+It needs:
+About ten questions, including S2 , S5 , Q7Sk , Q9 and Q12 — the ones the planted
+faults touch
+Real routing, including the skip that F06 breaks
+Two language settings and two device settings
+The faults from faults.json encoded as actual behaviour: with language 1046 and
+device mobile, Q7Sk returns no input control at all
+The walk_survey tool steps through it and returns what a respondent would have
+experienced — which questions appeared, what could be entered, where it ended.
+
+Page 11 of 17
+
+Untitled
+
+The closed loop, and why it is the best thing in the demo
+The investigator notices something odd in the data, forms a theory about the survey, and
+goes and tests that theory against the survey itself before reporting.
+Nobody does this today. A researcher who spots an oddity in the data has to hand it to a
+different team to check the script. The loop is closed by an email and two days. Here it
+closes in nine seconds, inside one investigation.
+Make sure the trace shows it clearly, with the walk result quoted in the final finding. If one
+thing gets remembered from the demo, this should be it.
+
+Piece 5 — the adjudicator
+A single model call, not an agent. It takes every investigator's finding and produces the
+final report.
+It must:
+Deduplicate. One fault often produces several symptoms. F01 will surface as both item
+non-response and a device anomaly; they are one finding, not two
+Assign severity — critical, high, medium, low
+Produce a go/no-go recommendation with reasoning. This is the client's acceptance
+criterion, word for word
+Report what was not checked — the power-gate suppressions and the two blocked
+categories
+The recommendation can be per market. F01 affects two of five languages, so the right
+answer is "go for three markets, hold two" — which is more useful than a blanket no, and
+shows the system is reasoning about impact rather than counting flags.
+Use structured output so the report is data rather than prose you have to parse to score.
+
+Piece 6: scoring against ground truth
+Small piece, large effect. It compares the final report against ground_truth_n150.json
+and prints a score.
+This is what turns a demo into evidence. Anyone can show a system producing output.
+Showing that you measured it, against answers known in advance, is what makes a client
+believe you have built this kind of thing before.
+
+Page 12 of 17
+
+Untitled
+
+What to measure
+Metric
+
+Question it answers
+
+Detection rate
+
+Of the 8 planted faults, how many were flagged?
+
+Diagnosis accuracy
+
+Of those, how many had the cause correctly
+identified?
+
+False positives
+
+How many findings were not planted faults?
+
+Power-gate correctness
+
+Were the right checks suppressed at n=45?
+
+Cost and tokens
+
+What did the run actually cost?
+
+Diagnosis accuracy is the one to lead with. Spotting that a number looks wrong is easy
+and a rules engine does it for free. Working out why is the thing we are claiming an agent
+can do, so that is the number that tests the claim.
+
+Report the misses
+The agent will miss something. At n=150 it will probably get six or seven of eight. Put the
+misses on screen with the reason:
+Found 6 of 8. F07 was correctly suppressed by the power gate at this sample size.
+F03 was flagged but attributed to device rather than sample source — wrong cause,
+counted as a miss.
+Resist the urge to tune the demo until it scores 8 of 8. A clean sweep on your own test
+data invites the obvious question about whether the test was rigged. A reported miss,
+with a reason, answers that question before it is asked and is far more persuasive.
+
+Run it twice
+Run at n=45 and again at n=150, and show both. The first demonstrates the power gate
+holding things back; the second shows the full investigation. The contrast is the clearest
+evidence that the system understands its own limits.
+
+Page 13 of 17
+
+Untitled
+
+Two-day build order
+Data generation and the fault catalogue are already done, so you start at the check
+generator.
+When
+
+Build
+
+Done when
+
+D1 first thing
+
+Confirm API credentials work
+
+A hello-world call returns. Do not
+leave this until day 2
+
+D1 morning
+
+Check generator and runner
+
+339 checks generated, 0
+configured prints against n150
+
+D1 early
+afternoon
+
+Power gate and triage output
+
+n=45 suppresses a batch with stated
+reasons; n=150 runs everything
+
+D1 late
+afternoon
+
+Investigator agent and tool layer
+
+One investigation completes end to
+end, however rough
+
+D1 end of day
+
+Checkpoint
+
+Send the check counts to whoever is
+writing the artifact
+
+D2 morning
+
+Prompt iteration
+
+Traces show stated theories and at
+least one dead end
+
+D2 early
+afternoon
+
+Survey model, closed loop,
+adjudicator, scoring
+
+F01 investigated end to end,
+including the survey walk
+
+D2 15:00
+
+Hard stop
+
+Both runs captured, scored, traces
+saved
+
+D2 after 15:00
+
+Numbers to the artifact, dry run
+
+—
+
+Three things that will trip you up
+Capture traces the moment something works. Do not leave recording to the end. The
+most common way this goes wrong is a system that worked at 14:00, broke at 16:00 during
+tidying, and was never recorded. Save a JSON trace for every run, from the first one.
+Day 2 morning is prompt work, not code. The agent will run on day 1 and produce a boring
+trace — a flat list of queries with no visible reasoning. Turning that into something worth
+watching takes several passes. That is normal. Budget for it rather than being surprised.
+
+Page 14 of 17
+
+Untitled
+
+The artifact cannot wait for the demo. Everything except the measured numbers should
+be written by midday on day 2, with placeholders. If the demo slips, the artifact still ships,
+and the artifact is the main deliverable — it is the thing that answers the client's actual
+question.
+
+What not to build, and what will cost you hours
+Do not build
+Playwright or any browser automation. The survey model is a state machine
+Anything touching real Confirmit. We have no access and do not need it
+More agent types. One investigator. Adding a "planner agent" and a "verifier agent"
+that each make one model call is exactly the padding the client artifact warns against,
+and it would contradict our own document
+Routing conformance or quota checks. Both need inputs that do not exist. Declare
+them blocked
+A web UI. Terminal output with clear formatting is fine. If there is spare time at the end,
+an HTML trace viewer is nice — but it is the last thing, not the first
+
+Gotchas
+pip is permission-denied on this machine. The script in Program Files cannot be run.
+
+Use python -m pip install --user <package> — that works. The anthropic SDK is
+already installed this way.
+ANTHROPIC_BASE_URL is set but there is no API key in the environment. Sort this before
+
+anything else on day 1.
+query_data will blow up the context if you let it. A grouped query over 150 respondents
+
+can return hundreds of rows. Cap results at about 20 rows and tell the model how many
+were omitted. Without this an investigation dies around step 12 with a context error.
+The data is nested. Two loop blocks, LoopT1 and LpPSPrices , are arrays of repeated
+question sets. Multi-choice answers are stored as lists of selected and unselected codes,
+not booleans. Flatten once, early, and have every tool read the flat version — do not make
+the agent deal with the raw shape.
+The schema contains no routing logic. Zero mentions of conditions, skips or filters — we
+checked. Do not go looking for it. Routing lives in a Word questionnaire the client has not
+given us, which is why routing conformance is out of scope.
+
+Page 15 of 17
+
+Untitled
+
+Runs are not reproducible, and that is the point. The same input will produce a different
+trace each time. Log every run in full, because a good trace you failed to save is gone.
+
+Glossary
+The client's vocabulary, so their documents make sense.
+Term
+
+What it means
+
+Confirmit
+
+The software their surveys run on. Think industrial
+SurveyMonkey
+
+Schema
+
+The machine-readable definition of a survey's
+questions. Our main input
+
+Fieldwork
+
+The period the survey is live and answers are
+arriving
+
+Soft launch
+
+Releasing to a small first batch and checking the
+data before opening to everyone
+
+Complete
+
+A respondent who finished the whole survey
+
+Screen-out / terminate
+
+Someone ejected early for not qualifying
+
+Quota
+
+A target like "100 cardiologists". Quota full means
+that group is done
+
+Routing / skip logic
+
+Rules deciding which question comes next based
+on earlier answers
+
+Grid
+
+One question asked about several items at once —
+stored as several columns
+
+Loop
+
+A block of questions repeated per item, such as
+once per drug
+
+Allocation question
+
+"Split 100 points across these options." The parts
+must total 100
+
+Straightlining
+
+Giving the same answer down a whole grid without
+reading — a cheating signal
+
+Speeder
+
+Someone who finished implausibly fast
+
+Page 16 of 17
+
+Untitled
+
+Term
+
+What it means
+
+LOI
+
+Length of interview, how long someone took
+
+Joker
+
+Their nickname for a bad respondent — a bot or
+someone rushing for the incentive
+
+AE
+
+Adverse event, a drug side effect. Legally
+reportable, which is why they care
+
+Wave / tracker
+
+The same survey repeated periodically to track
+change
+
+Cross-tab
+
+A table splitting answers by group, the core output
+of this industry
+
+TabSpec
+
+The document specifying which tables to build
+
+Item non-response
+
+People leaving a question blank
+
+Go/no-go
+
+The decision to launch to the full sample, or hold
+
+DMD
+
+One of their internal teams. Their document never
+spells out the acronym
+
+Two things worth knowing about the client
+Their requirements document lists 29 requirements, and 25 of them explicitly require a
+human to review, approve or override. The word "autonomy" appears exactly once, in a
+question asking how much should be allowed. They are a pharma supplier and they are
+cautious about this, with good reason.
+So the demo should feel capable, not reckless. The agent investigates entirely on its own;
+a human approves the launch decision. That balance is the point, and the client artifact
+argues it at length.
+
+Page 17 of 17
+
+

@@ -112,3 +112,4 @@ if __name__ == "__main__":
     test_investigator_dynamic_step_counts()
     test_investigator_memory_isolation()
     print("All Step 6 investigator agent tests passed successfully!")
+

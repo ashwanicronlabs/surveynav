@@ -481,3 +481,4 @@ if __name__ == "__main__":
     print(f"Total Model Calls:  {tokens['total_calls']}")
     print(f"Total Tokens Used:  {tokens['total_tokens']:,}")
     print(f"Estimated USD Cost: ${tokens['estimated_usd_cost']:.4f}" if 'estimated_usd_cost' in tokens else f"Estimated USD Cost: ${tokens['estimated_cost_usd']:.4f}")
+
