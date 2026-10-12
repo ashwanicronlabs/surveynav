@@ -5,12 +5,11 @@
     "check_type": "item_non_response",
     "description": "Allocation slider fails on mobile in languages 1046 and 2058",
     "min_n": 30,
-    "affected_count": 4,
+    "affected_count": 3,
     "affected_respondents": [
-      200002,
-      200016,
-      200039,
-      200044
+      200028,
+      200034,
+      200041
     ]
   },
   {
@@ -21,8 +20,8 @@
     "min_n": 1,
     "affected_count": 2,
     "affected_respondents": [
-      200001,
-      200038
+      200024,
+      200031
     ]
   },
   {
@@ -31,17 +30,19 @@
     "check_type": "speeding",
     "description": "Speeding cluster from sample source bgSource=3",
     "min_n": 30,
-    "affected_count": 9,
+    "affected_count": 11,
     "affected_respondents": [
       200003,
-      200005,
-      200009,
       200013,
       200019,
+      200021,
       200024,
+      200028,
+      200031,
       200032,
-      200042,
-      200043
+      200037,
+      200038,
+      200040
     ]
   },
   {
@@ -52,9 +53,9 @@
     "min_n": 1,
     "affected_count": 3,
     "affected_respondents": [
-      200014,
-      200009,
-      200029
+      200043,
+      200027,
+      200012
     ]
   },
   {
@@ -65,9 +66,9 @@
     "min_n": 1,
     "affected_count": 3,
     "affected_respondents": [
-      200031,
-      200028,
-      200024
+      200017,
+      200019,
+      200042
     ]
   },
   {
@@ -76,17 +77,24 @@
     "check_type": "routing_anomaly",
     "description": "Routing bug sends S2=1 into Q9 instead of skipping",
     "min_n": 50,
-    "affected_count": 9,
+    "affected_count": 16,
     "affected_respondents": [
-      200003,
-      200005,
-      200010,
+      200001,
       200011,
-      200014,
-      200019,
-      200029,
-      200034,
-      200038
+      200012,
+      200017,
+      200020,
+      200021,
+      200022,
+      200023,
+      200024,
+      200032,
+      200036,
+      200037,
+      200040,
+      200042,
+      200043,
+      200044
     ]
   },
   {
@@ -95,42 +103,44 @@
     "check_type": "degenerate_distribution",
     "description": "Pre-selected default option 1 on Q5 leads to degenerate distribution",
     "min_n": 50,
-    "affected_count": 34,
+    "affected_count": 36,
     "affected_respondents": [
       200001,
-      200002,
       200003,
       200004,
       200005,
       200006,
-      200007,
-      200009,
+      200008,
       200010,
       200011,
       200012,
       200013,
       200014,
+      200015,
       200016,
+      200017,
+      200018,
       200019,
       200020,
       200021,
+      200022,
       200023,
       200024,
-      200025,
+      200026,
       200027,
       200028,
       200029,
-      200033,
-      200034,
+      200031,
+      200032,
       200035,
       200036,
       200037,
       200038,
-      200039,
       200040,
+      200041,
       200042,
-      200043,
-      200044
+      200044,
+      200045
     ]
   },
   {
@@ -139,22 +149,11 @@
     "check_type": "disposition_mix",
     "description": "Screener over-rejection in market language 1046 (>80% screened out)",
     "min_n": 50,
-    "affected_count": 14,
+    "affected_count": 3,
     "affected_respondents": [
-      200002,
-      200003,
-      200004,
-      200006,
-      200007,
-      200008,
-      200012,
-      200013,
-      200021,
-      200030,
-      200037,
-      200039,
-      200041,
-      200042
+      200009,
+      200018,
+      200040
     ]
   }
 ]

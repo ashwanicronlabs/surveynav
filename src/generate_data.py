@@ -83,13 +83,49 @@ def generate_baseline_respondent(respid: int, rng: random.Random) -> Dict[str, A
         "hidLOISec": round(loi_min * 60, 1),
         "hIPFlag": rng.choice(["1", "2"]),
         "hPunch": rng.choice(["1", "2", "3", "4"]),
-        "ErrorMessage": {"true": [rng.choice(["1", "2", "3"])], "false": []},
+        "ErrorMessage": {"true": ["1"] if status == "error" else [], "false": []},
         "hidQueDropout": "2025-01-05T08:30:00Z",
         "interview_start": "2025-01-05T08:00:00Z",
         "interview_end": "2025-01-05T08:20:00Z",
         "last_touched": "2025-01-05T08:18:00Z",
         "lastcomplete": "2025-01-05T08:20:00Z" if status == "complete" else None,
-        "first_question_on_last_page_displayed": "Thank you for participating."
+        "first_question_on_last_page_displayed": "Thank you for participating.",
+        "hidSurveyStart": "2025-01-05T08:00:00Z",
+        "hidSurveyEnd": "2025-01-05T08:20:00Z",
+        "tStart": "2025-01-05T08:00:00Z",
+        "tEnd": "2025-01-05T08:20:00Z",
+        "hBrowserType": "Chrome",
+        "hBrowserVersion": "120.0",
+        "hBrowser": "Chrome 120",
+        "hIPAddress": "192.168.1.1",
+        "hScreenResolution": "1920x1080",
+        "hSRMode": "1",
+        "hUserAgent": "Mozilla/5.0",
+        "hOperatingSystem": "1",
+        "hDeviceType": "1",
+        "bgrpid": "GRP1",
+        "bgtest": "1",
+        "isTest": "1",
+        "bgLinkStatus": "1",
+        "hidrespurl": "https://example.invalid",
+        "hidquerystring": "id=1",
+        "hiduserid": f"UID_{respid}",
+        "hidredirectlink": "https://example.invalid/done",
+        "PCurrencyHidden": "1",
+        "tSection3": 10.0,
+        "tSectionTotal": 15.0,
+        "hidQualified": "1",
+        "hidCustomErrorMsg": {"true": ["oe"]},
+        "hidCustomLabels": {"true": ["s4"]},
+        "hidFlatlineFlag": {"true": ["m0"]},
+        "hidScreened": {"true": ["S1"]},
+        "hidScreenedFirst": "S1",
+        "hidScreenedHold": "1",
+        "hidScreenedImm": "1",
+        "hidquotafull": {"true": ["tot"]},
+        "dPSPriceShown": {"true": ["1", "2"]},
+        "dPSAllPunch": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5"},
+        "dPSPriceOrder": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5"}
     }
 
     # 4. Screener Section (S0 to S14):
@@ -118,7 +154,13 @@ def generate_baseline_respondent(respid: int, rng: random.Random) -> Dict[str, A
     record["Q1"] = {"1": round(rng.uniform(10.0, 90.0), 1)}
     record["Q2"] = {"1": round(rng.uniform(10.0, 90.0), 1)}
     record["Q3"] = rng.choice(["1", "2", "3", "4", "5", "6", "7"])
-    record["Q4"] = {str(i): round(rng.uniform(10.0, 90.0), 1) for i in [1, 2, 3, 4]}
+    # Q4: Multi-part allocation (4 parts strictly totaling 100)
+    q4_1 = rng.randint(15, 35)
+    q4_2 = rng.randint(15, 35)
+    q4_3 = rng.randint(15, 35)
+    q4_4 = 100 - (q4_1 + q4_2 + q4_3)
+    record["Q4"] = {"1": q4_1, "2": q4_2, "3": q4_3, "4": q4_4}
+
     # Q5 options: uniformly distributed across options 1, 2, and 96 by default
     record["Q5"] = rng.choice(["1", "2", "96"])
     record["Q6"] = {"1": round(rng.uniform(10.0, 90.0), 1)}
@@ -136,7 +178,12 @@ def generate_baseline_respondent(respid: int, rng: random.Random) -> Dict[str, A
     s4 = 100 - (s1 + s2 + s3)
     record["Q7Sk"] = {"1": s1, "2": s2, "3": s3, "4": s4}
 
-    record["Q7Tk"] = {str(i): rng.randint(10, 40) for i in range(1, 5)}
+    # Q7Tk: 4 parts totaling 100
+    t1 = rng.randint(15, 35)
+    t2 = rng.randint(15, 35)
+    t3 = rng.randint(15, 35)
+    t4 = 100 - (t1 + t2 + t3)
+    record["Q7Tk"] = {"1": t1, "2": t2, "3": t3, "4": t4}
     record["Q7Dk"] = {"true": ["99"]}
 
     # Q9 Expected Skip Logic:
@@ -148,29 +195,51 @@ def generate_baseline_respondent(respid: int, rng: random.Random) -> Dict[str, A
 
     record["Q10"] = {"true": [rng.choice(["1", "2", "3", "4"])]}
     record["Q11"] = rng.choice(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"])
-    record["Q12"] = {str(i): rng.randint(1, 5) for i in range(1, 8)}
+    
+    # Q12: 7 parts totaling 100
+    parts_12 = [rng.randint(8, 16) for _ in range(6)]
+    parts_12.append(100 - sum(parts_12))
+    record["Q12"] = {str(i): parts_12[i-1] for i in range(1, 8)}
+    
     record["Q17"] = rng.choice(["1", "2", "3"])
     record["Q18"] = {"1": rng.choice(["1", "2", "3"])}
-    record["Q19"] = {str(i): rng.choice(["1", "2", "3"]) for i in range(1, 4)}
-    record["Q20"] = {str(i): rng.randint(1, 5) for i in range(1, 9)}
+    
+    # Q19: Grid with varied choices (1 to 3)
+    record["Q19"] = {"1": "1", "2": "2", "3": "3"}
+    
+    # Q20: 9 parts totaling 100
+    parts_20 = [rng.randint(6, 12) for _ in range(8)]
+    parts_20.append(100 - sum(parts_20))
+    record["Q20"] = {str(i): parts_20[i-1] for i in range(1, 10)}
     record["Q21"] = {"1": rng.randint(1, 5)}
+    record["hAPPENDIX"] = rng.choice(["1", "2", "3", "4"])
 
     # 6. Grid and Ranking Questions (T11 to T24):
     record["T11"] = rng.choice(["1", "2", "3"])
     record["T12"] = rng.choice(["1", "2", "3", "4"])
-    record["T13"] = {str(i): str(rng.randint(1, 7)) for i in range(1, 9)}
+    record["T13"] = {str(i): str((i % 7) + 1) for i in range(1, 9)}
 
-    # T14: 7-item grid; realistic varied answers across items 1 through 7
-    record["T14"] = {str(i): str(rng.randint(1, 2)) for i in range(1, 8)}
+    # T14: 7-item grid; realistic varied answers across items 1 through 7 (no straightlining by default)
+    record["T14"] = {str(i): str((i % 2) + 1) for i in range(1, 8)}
 
-    record["T15"] = {str(i): rng.randint(1, 5) for i in range(1, 4)}
+    # T15: 3 parts totaling 100
+    t15_1 = rng.randint(25, 45)
+    t15_2 = rng.randint(25, 45)
+    t15_3 = 100 - (t15_1 + t15_2)
+    record["T15"] = {"1": t15_1, "2": t15_2, "3": t15_3}
+    
     record["T16"] = {"1": rng.randint(1, 5)}
     record["T17"] = rng.choice(["1", "2", "3", "4"])
     record["T18"] = {"1": rng.randint(1, 5)}
     record["T18Dk"] = {"false": ["1"]}
     record["T19"] = {"true": [rng.choice(["1", "2", "3"])], "false": ["4", "5"]}
-    record["T20"] = {str(i): rng.randint(1, 5) for i in range(1, 4)}
-    record["T21"] = {str(i): rng.randint(1, 5) for i in range(1, 4)}
+    record["T20"] = {str(i): (i % 5) + 1 for i in range(1, 4)}
+    
+    # T21: 3 parts totaling 100
+    t21_1 = rng.randint(25, 45)
+    t21_2 = rng.randint(25, 45)
+    t21_3 = 100 - (t21_1 + t21_2)
+    record["T21"] = {"1": t21_1, "2": t21_2, "3": t21_3}
     record["T23"] = {"1": rng.randint(1, 5)}
     record["T24"] = rng.choice(["1", "2", "3", "4"])
     record["T24New"] = {str(i): str(rng.randint(1, 5)) for i in range(1, 9)}
@@ -185,26 +254,37 @@ def generate_baseline_respondent(respid: int, rng: random.Random) -> Dict[str, A
     record["PP4"] = rng.choice(["1", "2", "3", "4"])
     record["PP5"] = rng.choice(["1", "2", "3", "4"])
     record["P9"] = {"1": round(rng.uniform(1.0, 5.0), 2)}
+    record["P9"] = {"1": round(rng.uniform(1.0, 5.0), 2)}
     record["P10"] = {"1": round(rng.uniform(1.0, 5.0), 2)}
     record["P11"] = {"1": round(rng.uniform(1.0, 5.0), 2)}
-    record["P12"] = {str(i): "Valid feedback response." for i in range(1, 4)}
+    record["P12"] = {str(i): f"Feedback point {i} detail." for i in range(1, 4)}
+    for i in range(1, 11):
+        record[f"P12x{i}"] = {"1": f"P12 detail {i}"}
+    record["P12Ex"] = {"true": ["1"]}
 
     # 8. Nested Loop Blocks (LoopT1 and LpPSPrices):
-    record["LoopT1"] = [
-        {
-            "LoopT1": "1",
-            "T1": {"1": "Clear feedback."},
-            "T2": {"1": "Useful response."},
-            "T3": {"1": rng.choice(["1", "2", "3"])},
-            "T4": rng.choice(["1", "2", "3", "4"]),
-            "T5": {"1": rng.randint(1, 5)},
-            "T6": {"true": ["1", "2"], "false": ["3"]},
-            "T7": {str(i): str(rng.randint(1, 7)) for i in range(1, 8)},
-            "T7b": rng.choice(["1", "2"]),
-            "T9": rng.choice(["1", "2"]),
-            "T10": {"1": "Good experience."}
-        }
-    ]
+    loop_t1_dict = {
+        "LoopT1": "1",
+        "T1": {"1": "Clear feedback."},
+        "T2": {"1": "Useful response."},
+        "T3": {"1": rng.choice(["1", "2", "3"])},
+        "T4": rng.choice(["1", "2", "3", "4"]),
+        "T5": {"1": rng.randint(1, 5)},
+        "T6": {"true": ["1", "2"], "false": ["3"]},
+        "T7": {str(i): str(rng.randint(1, 7)) for i in range(1, 8)},
+        "T7b": rng.choice(["1", "2"]),
+        "T9": rng.choice(["1", "2"]),
+        "T10": {"1": "Good experience."},
+        "T1Ex": {"true": ["1"]},
+        "T2Ex": {"true": ["1"]},
+        "T10Ex": {"true": ["1"]}
+    }
+    for i in range(1, 11):
+        loop_t1_dict[f"T1x{i}"] = {"1": f"T1 sub detail {i}"}
+        loop_t1_dict[f"T2x{i}"] = {"1": f"T2 sub detail {i}"}
+        loop_t1_dict[f"T10x{i}"] = {"1": f"T10 sub detail {i}"}
+
+    record["LoopT1"] = [loop_t1_dict]
 
     record["LpPSPrices"] = [
         {
