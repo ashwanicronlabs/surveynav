@@ -1,0 +1,160 @@
+[
+  {
+    "fault_id": "F01",
+    "target_variable": "Q7Sk",
+    "check_type": "item_non_response",
+    "description": "Allocation slider fails on mobile in languages 1046 and 2058",
+    "min_n": 30,
+    "affected_count": 4,
+    "affected_respondents": [
+      200002,
+      200016,
+      200039,
+      200044
+    ]
+  },
+  {
+    "fault_id": "F02",
+    "target_variable": "T14",
+    "check_type": "straightlining",
+    "description": "Straightlining on 7-item grid T14",
+    "min_n": 1,
+    "affected_count": 2,
+    "affected_respondents": [
+      200001,
+      200038
+    ]
+  },
+  {
+    "fault_id": "F03",
+    "target_variable": "hidLOI",
+    "check_type": "speeding",
+    "description": "Speeding cluster from sample source bgSource=3",
+    "min_n": 30,
+    "affected_count": 9,
+    "affected_respondents": [
+      200003,
+      200005,
+      200009,
+      200013,
+      200019,
+      200024,
+      200032,
+      200042,
+      200043
+    ]
+  },
+  {
+    "fault_id": "F04",
+    "target_variable": "S5",
+    "check_type": "range_violation",
+    "description": "Question S5 accepts values > 100.0",
+    "min_n": 1,
+    "affected_count": 3,
+    "affected_respondents": [
+      200014,
+      200009,
+      200029
+    ]
+  },
+  {
+    "fault_id": "F05",
+    "target_variable": "Q7Mx",
+    "check_type": "allocation_sum",
+    "description": "Allocation question Q7Mx does not sum to 100",
+    "min_n": 1,
+    "affected_count": 3,
+    "affected_respondents": [
+      200031,
+      200028,
+      200024
+    ]
+  },
+  {
+    "fault_id": "F06",
+    "target_variable": "Q9",
+    "check_type": "routing_anomaly",
+    "description": "Routing bug sends S2=1 into Q9 instead of skipping",
+    "min_n": 50,
+    "affected_count": 9,
+    "affected_respondents": [
+      200003,
+      200005,
+      200010,
+      200011,
+      200014,
+      200019,
+      200029,
+      200034,
+      200038
+    ]
+  },
+  {
+    "fault_id": "F07",
+    "target_variable": "Q5",
+    "check_type": "degenerate_distribution",
+    "description": "Pre-selected default option 1 on Q5 leads to degenerate distribution",
+    "min_n": 50,
+    "affected_count": 34,
+    "affected_respondents": [
+      200001,
+      200002,
+      200003,
+      200004,
+      200005,
+      200006,
+      200007,
+      200009,
+      200010,
+      200011,
+      200012,
+      200013,
+      200014,
+      200016,
+      200019,
+      200020,
+      200021,
+      200023,
+      200024,
+      200025,
+      200027,
+      200028,
+      200029,
+      200033,
+      200034,
+      200035,
+      200036,
+      200037,
+      200038,
+      200039,
+      200040,
+      200042,
+      200043,
+      200044
+    ]
+  },
+  {
+    "fault_id": "F08",
+    "target_variable": "status",
+    "check_type": "disposition_mix",
+    "description": "Screener over-rejection in market language 1046 (>80% screened out)",
+    "min_n": 50,
+    "affected_count": 14,
+    "affected_respondents": [
+      200002,
+      200003,
+      200004,
+      200006,
+      200007,
+      200008,
+      200012,
+      200013,
+      200021,
+      200030,
+      200037,
+      200039,
+      200041,
+      200042
+    ]
+  }
+]
