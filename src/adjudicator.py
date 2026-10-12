@@ -331,7 +331,10 @@ def adjudicate_findings(
             symptom_checks=symptoms,
             severity=severity,
             affected_markets=affected_markets,
-            closed_loop_verified=True if "walk" in cause.lower() or "closed-loop" in cause.lower() else False,
+            closed_loop_verified=(
+                f.get("closed_loop_verified") if isinstance(f, dict) and "closed_loop_verified" in f
+                else (True if "walk" in cause.lower() or "closed-loop" in cause.lower() else False)
+            ),
             evidence=evidence,
             recommended_action=rec_action
         ))

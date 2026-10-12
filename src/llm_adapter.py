@@ -811,7 +811,8 @@ class LLMClient:
                 pass
 
 
-        if self.provider == "mock":
+        # Fallback to deterministic policy if provider is mock or live API call is unavailable/failed
+        if self.provider in ("mock", "openai", "gemini", "anthropic", "auto"):
             if task_type == "triage":
                 anomalies = context.get("anomalies", [])
                 tasks = []
