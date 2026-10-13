@@ -6,3 +6,4 @@ rich>=13.0.0
 # Optional Development & Testing Utilities (uncomment to install)
 # pytest>=7.0.0
 # python-dotenv>=1.0.0
+

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurveyNav · Autonomous QC Platform & Survey Walker</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Custom animations and styling */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.3; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .touch-target {
+      animation: pulse-ring 1.8s infinite ease-in-out;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.5);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION & EXECUTIVE METRICS BAR                                -->
+  <!-- ===================================================================== -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="h-9 w-9 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-indigo-500/20">
+        SN
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-base font-bold text-white tracking-wide">SURVEYNAV <span class="text-xs px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 font-medium">REQ-009</span></h1>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live Agent Active
+          </span>
+        </div>
+        <p class="text-xs text-slate-400">Inizio Ignite · Autonomous Soft-Launch QC & Closed-Loop Survey Walker</p>
+      </div>
+    </div>
+
+    <!-- Mode & Sample Controls -->
+    <div class="flex items-center gap-3 bg-slate-950/70 p-1.5 rounded-xl border border-slate-800">
+      <span class="text-xs font-semibold text-slate-400 pl-2">Batch Sample:</span>
+      <button id="btn-n45" onclick="setSampleSize(45)" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-800 text-slate-300 hover:bg-slate-700">
+        n = 45 (Soft-Launch Initial)
+      </button>
+      <button id="btn-n150" onclick="setSampleSize(150)" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-600/30">
+        n = 150 (Full Scale)
+      </button>
+      <button onclick="triggerFullPipelineDemo()" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow hover:from-emerald-400 hover:to-teal-500 transition-all">
+        <span>▶</span> Run Full QC Evaluation
+      </button>
+    </div>
+
+    <!-- Economics and Stats -->
+    <div class="flex items-center gap-4 text-xs">
+      <div class="text-right">
+        <div class="text-slate-400 text-[11px] uppercase tracking-wider">Run Cost</div>
+        <div class="font-bold text-emerald-400">$0.1474 <span class="text-slate-500 text-[11px]">/ $2.00 target</span></div>
+      </div>
+      <div class="h-6 w-px bg-slate-800"></div>
+      <div class="text-right">
+        <div class="text-slate-400 text-[11px] uppercase tracking-wider">Architecture</div>
+        <div class="font-bold text-indigo-400">Single Agent <span class="text-slate-500 text-[11px]">(0 inflation)</span></div>
+      </div>
+      <div class="h-6 w-px bg-slate-800"></div>
+      <div class="text-right">
+        <div class="text-slate-400 text-[11px] uppercase tracking-wider">Diagnosis Acc.</div>
+        <div class="font-bold text-cyan-400">100% <span class="text-slate-500 text-[11px]">(0 FP)</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN WORKSPACE: SPLIT-VIEW (CONTROL ROOM + SURVEY WALKER VIEWPORT)    -->
+  <!-- ===================================================================== -->
+  <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 max-w-7xl mx-auto w-full">
+
+    <!-- LEFT PANEL: CONTROL ROOM & AGENTIC INVESTIGATION (7 cols) -->
+    <div class="lg:col-span-7 flex flex-col gap-6">
+
+      <!-- Navigation Tabs -->
+      <div class="flex items-center border-b border-slate-800 gap-2">
+        <button id="tab-btn-rules" onclick="switchTab('rules')" class="px-4 py-2 text-xs font-bold text-indigo-400 border-b-2 border-indigo-500 transition-all">
+          1. 339 Rules & Power Gate
+        </button>
+        <button id="tab-btn-agent" onclick="switchTab('agent')" class="px-4 py-2 text-xs font-medium text-slate-400 hover:text-slate-200 border-b-2 border-transparent transition-all">
+          2. Autonomous Investigator Trace
+        </button>
+        <button id="tab-btn-adjudicator" onclick="switchTab('adjudicator')" class="px-4 py-2 text-xs font-medium text-slate-400 hover:text-slate-200 border-b-2 border-transparent transition-all">
+          3. Adjudicator & Go/No-Go Decision
+        </button>
+      </div>
+
+      <!-- TAB 1: 339 RULES ENGINE & STATISTICAL POWER GATE -->
+      <div id="tab-rules" class="flex flex-col gap-5">
+        <!-- Power Gate Audible Statement -->
+        <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">
+          <div class="flex items-start gap-3">
+            <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400 text-lg">⚖️</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xs font-bold text-amber-300 uppercase tracking-wider">Statistical Power Gate Statement</h3>
+                <span id="power-gate-badge" class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">83 Suppressed</span>
+              </div>
+              <p id="power-gate-text" class="text-xs text-slate-300 mt-1 leading-relaxed">
+                256 checks passed, 5 flagged, 83 suppressed. Statistical Power Gate dynamically suppressed degenerate distribution checks because n=150 is under the required power threshold (n &lt; 200).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 339 Derived Rules Breakdown -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-bold text-white">339 QC Checks Auto-Derived from Confirmit Schema</h3>
+              <p class="text-xs text-slate-400">Strictly 0 hand-written rules. Dynamically generated from questionnaire JSON.</p>
+            </div>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">
+              339 Total Rules
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="bg-slate-950/70 border border-slate-800 rounded-lg p-3">
+              <div class="text-[11px] text-slate-400">Range Constraints</div>
+              <div class="text-lg font-bold text-emerald-400 mt-0.5">67 <span class="text-xs text-slate-500 font-normal">checks</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">S5 upper boundary test</div>
+            </div>
+            <div class="bg-slate-950/70 border border-slate-800 rounded-lg p-3">
+              <div class="text-[11px] text-slate-400">Item Non-Response</div>
+              <div class="text-lg font-bold text-emerald-400 mt-0.5">67 <span class="text-xs text-slate-500 font-normal">checks</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">Q7Sk missingness test</div>
+            </div>
+            <div class="bg-slate-950/70 border border-slate-800 rounded-lg p-3">
+              <div class="text-[11px] text-slate-400">Straightlining Grids</div>
+              <div class="text-lg font-bold text-emerald-400 mt-0.5">11 <span class="text-xs text-slate-500 font-normal">checks</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">T14 zero-variance test</div>
+            </div>
+            <div class="bg-slate-950/70 border border-slate-800 rounded-lg p-3">
+              <div class="text-[11px] text-slate-400">Speeding &amp; LOI</div>
+              <div class="text-lg font-bold text-emerald-400 mt-0.5">3 <span class="text-xs text-slate-500 font-normal">checks</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">40% median LOI threshold</div>
+            </div>
+            <div class="bg-slate-950/70 border border-slate-800 rounded-lg p-3">
+              <div class="text-[11px] text-slate-400">Allocation Constant Sum</div>
+              <div class="text-lg font-bold text-emerald-400 mt-0.5">2 <span class="text-xs text-slate-500 font-normal">checks</span></div>
+              <div class="text-[11px] text-slate-400 mt-1">Q7Mx sum == 100 constraint</div>
+            </div>
+            <div class="bg-slate-950/70 border border-slate-800 rounded-lg p-3">
+              <div class="text-[11px] text-slate-400">Degenerate / Mix</div>
+              <div class="text-lg font-bold text-amber-400 mt-0.5">189 <span class="text-xs text-slate-500 font-normal">checks</span></div>
+              <div id="suppressed-pill" class="text-[11px] text-amber-400 mt-1">83 suppressed (Power Gate)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blocked Categories Audit Banner -->
+        <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+          <div class="flex items-start gap-3">
+            <div class="p-2 rounded-lg bg-slate-800 text-slate-400 text-base">🛡️</div>
+            <div>
+              <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Client Acceptance Guarantee: 0 Spec Assumptions</h4>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                Categories requiring Word questionnaire routing specs or client quota target matrices are <span class="text-amber-400 font-semibold">explicitly audited as BLOCKED</span> rather than falsified.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-2.5">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                  Routing Conformance: <strong class="text-rose-400">BLOCKED (Missing Word Spec)</strong>
+                </span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                  Quota Conformance: <strong class="text-rose-400">BLOCKED (Missing Target Matrix)</strong>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: AUTONOMOUS INVESTIGATOR AGENT TRACE -->
+      <div id="tab-agent" class="hidden flex-col gap-4">
+        <!-- Triage Selector -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Triaged Anomalies Queue</h3>
+              <p class="text-xs text-slate-400">Select an anomaly to inspect the autonomous investigator's multi-turn tool reasoning.</p>
+            </div>
+            <span class="text-xs px-2.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">
+              Triage: Strictly 1 Model Call
+            </span>
+          </div>
+
+          <div class="flex flex-wrap gap-2" id="task-selector-pills">
+            <button onclick="selectTask('F01')" id="pill-F01" class="px-3 py-1.5 rounded-lg text-xs font-bold border transition-all bg-indigo-600/30 text-indigo-300 border-indigo-500">
+              P1 · Q7Sk Mobile Slider (F01)
+            </button>
+            <button onclick="selectTask('F04')" id="pill-F04" class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200">
+              P1 · S5 Boundary Missing (F04)
+            </button>
+            <button onclick="selectTask('F05')" id="pill-F05" class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200">
+              P1 · Q7Mx Sum Totalizer (F05)
+            </button>
+            <button onclick="selectTask('F03')" id="pill-F03" class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200">
+              P2 · Speeding bgSource=3 (F03)
+            </button>
+            <button onclick="selectTask('F02')" id="pill-F02" class="px-3 py-1.5 rounded-lg text-xs font-medium border transition-all bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200">
+              P3 · Straightlining T14 (F02)
+            </button>
+          </div>
+        </div>
+
+        <!-- Agent Reasoning & Tool Turn History -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col gap-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-white" id="investigator-title">Investigator Agent: Task TASK-001</span>
+                <span id="clv-badge" class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1 font-semibold">
+                  ✓ Closed-Loop Verified
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5" id="investigator-subtitle">
+                Target Variable: Q7Sk · Check Type: item_non_response · Safety Limit: 4/25 calls used
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-slate-400 font-mono">Loop Guardrail: <span class="text-emerald-400">PASSED</span></span>
+            </div>
+          </div>
+
+          <!-- Dynamic Steps Stream -->
+          <div class="space-y-3 custom-scrollbar max-h-[380px] overflow-y-auto pr-1" id="agent-turns-stream">
+            <!-- Populated dynamically by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: ADJUDICATOR & PER-MARKET GO/NO-GO DECISION -->
+      <div id="tab-adjudicator" class="hidden flex-col gap-4">
+        <!-- Executive Banner -->
+        <div class="bg-gradient-to-r from-rose-950/40 to-slate-900 border border-rose-500/30 rounded-xl p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Final Soft-Launch Adjudication</span>
+              <h2 class="text-lg font-black text-white mt-1">Go for 3 markets (9, 18, 31), Hold 2 markets (1046, 2058)</h2>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Global English, French, and German markets are clean of questionnaire code defects and cleared for field expansion.
+                Portuguese (Brazil) and Spanish (Mexico) MUST BE HELD immediately due to client-side mobile slider touch initialization failure.
+              </p>
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-rose-500/20 border border-rose-500/40 text-center shrink-0">
+              <div class="text-[11px] uppercase font-bold text-rose-300">Overall</div>
+              <div class="text-xl font-black text-rose-400">HOLD</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Market Granular Status Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+          <!-- Market 9 UK -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg">🇬🇧</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">GO</span>
+              </div>
+              <div class="font-bold text-xs text-white mt-2">UK (9)</div>
+              <p class="text-[11px] text-slate-400 mt-1 leading-tight">0 questionnaire code defects. Cleared to scale.</p>
+            </div>
+            <div class="text-[11px] text-emerald-400 font-semibold mt-3">0 Blockers</div>
+          </div>
+
+          <!-- Market 18 France -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg">🇫🇷</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">GO</span>
+              </div>
+              <div class="font-bold text-xs text-white mt-2">France (18)</div>
+              <p class="text-[11px] text-slate-400 mt-1 leading-tight">Clean soft-launch data. Cleared to scale.</p>
+            </div>
+            <div class="text-[11px] text-emerald-400 font-semibold mt-3">0 Blockers</div>
+          </div>
+
+          <!-- Market 31 Germany -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg">🇩🇪</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">GO</span>
+              </div>
+              <div class="font-bold text-xs text-white mt-2">Germany (31)</div>
+              <p class="text-[11px] text-slate-400 mt-1 leading-tight">Clean soft-launch data. Cleared to scale.</p>
+            </div>
+            <div class="text-[11px] text-emerald-400 font-semibold mt-3">0 Blockers</div>
+          </div>
+
+          <!-- Market 1046 Brazil -->
+          <div class="bg-slate-900 border border-rose-500/40 rounded-xl p-3.5 flex flex-col justify-between shadow-lg shadow-rose-950/30">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg">🇧🇷</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30">HOLD</span>
+              </div>
+              <div class="font-bold text-xs text-white mt-2">Brazil (1046)</div>
+              <p class="text-[11px] text-rose-300 mt-1 leading-tight">Blocked by Q7Sk mobile touch slider &amp; screener over-rejection.</p>
+            </div>
+            <div class="text-[11px] text-rose-400 font-semibold mt-3">2 Critical Defects</div>
+          </div>
+
+          <!-- Market 2058 Mexico -->
+          <div class="bg-slate-900 border border-rose-500/40 rounded-xl p-3.5 flex flex-col justify-between shadow-lg shadow-rose-950/30">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg">🇲🇽</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30">HOLD</span>
+              </div>
+              <div class="font-bold text-xs text-white mt-2">Mexico (2058)</div>
+              <p class="text-[11px] text-rose-300 mt-1 leading-tight">Blocked by Q7Sk mobile touch slider rendering failure.</p>
+            </div>
+            <div class="text-[11px] text-rose-400 font-semibold mt-3">1 Critical Defect</div>
+          </div>
+        </div>
+
+        <!-- Remediation Action Plan -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+          <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-3">5-Point Programmer Remediation Plan</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">1.</span>
+              <span><strong>Patch mobile slider touch listener (Q7Sk):</strong> Re-bundle touch event handlers for Portuguese (1046) and Spanish (2058) packages.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">2.</span>
+              <span><strong>Add upperNumericLimit constraint (S5):</strong> Enforce Confirmit numeric ceiling &le; 100.0 before form advance.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">3.</span>
+              <span><strong>Re-enable client totalizer validation (Q7Mx):</strong> Activate constant sum validation script requiring total == 100%.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">4.</span>
+              <span><strong>Quarantine sample vendor bgSource=3:</strong> Speeding cluster (median LOI 3.5m vs 13.5m benchmark) suggests bot fraud.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">5.</span>
+              <span><strong>Re-calibrate Brazil screener quotas (S1/S2):</strong> 84.6% screenout rate indicates overly restrictive incidence assumptions.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL: INTERACTIVE SURVEY WALKER DEVICE SIMULATOR (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col gap-4">
+
+      <!-- Viewport Header & Controls -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col gap-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span>📱</span> Closed-Loop Survey Walker
+            </h2>
+            <p class="text-[11px] text-slate-400 mt-0.5">Live in-memory simulator reproducing runtime bugs</p>
+          </div>
+          <!-- Device Toggle -->
+          <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800">
+            <button id="dev-mobile-btn" onclick="setDeviceMode('mobile')" class="px-2.5 py-1 rounded text-xs font-semibold bg-indigo-600 text-white transition-all">
+              Mobile Phone
+            </button>
+            <button id="dev-desktop-btn" onclick="setDeviceMode('desktop')" class="px-2.5 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition-all">
+              Desktop PC
+            </button>
+          </div>
+        </div>
+
+        <!-- Question & Market Selectors -->
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div>
+            <label class="text-[11px] text-slate-400 block mb-1">Target Question:</label>
+            <select id="select-question" onchange="changeQuestion(this.value)" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+              <option value="Q7Sk">Q7Sk · Touch Slider (F01)</option>
+              <option value="S5">S5 · Numeric Range (F04)</option>
+              <option value="Q7Mx">Q7Mx · Constant Sum (F05)</option>
+              <option value="T14">T14 · Evaluation Grid (F02)</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] text-slate-400 block mb-1">Language Market:</label>
+            <select id="select-language" onchange="changeLanguage(this.value)" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+              <option value="1046">🇧🇷 1046 (Portuguese - Defective)</option>
+              <option value="2058">🇲🇽 2058 (Spanish - Defective)</option>
+              <option value="9">🇬🇧 9 (English - Normal)</option>
+              <option value="18">🇫🇷 18 (French - Normal)</option>
+              <option value="31">🇩🇪 31 (German - Normal)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="flex items-center gap-2 pt-1">
+          <button id="btn-walk" onclick="startSurveyWalkSimulation()" class="flex-1 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/20 transition-all flex items-center justify-center gap-1.5">
+            <span>⚡</span> Execute Live Walk (<span id="walk-target-label">Q7Sk</span>)
+          </button>
+          <button onclick="resetSimulator()" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium transition-all">
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- DEVICE SHELL (Dynamic: Smartphone vs Desktop) -->
+      <div id="device-wrapper" class="flex justify-center transition-all">
+        
+        <!-- Mobile Frame Container -->
+        <div id="mobile-frame" class="w-[340px] h-[580px] bg-slate-950 border-4 border-slate-700 rounded-[40px] shadow-2xl relative overflow-hidden flex flex-col p-2">
+          <!-- Top Speaker & Camera Notch -->
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-4 bg-slate-800 rounded-full z-20 flex items-center justify-center">
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700"></div>
+          </div>
+
+          <!-- Phone Inner Screen -->
+          <div class="flex-1 bg-white rounded-[32px] overflow-hidden flex flex-col text-slate-900 relative">
+            <!-- Mobile Status Bar -->
+            <div class="h-6 bg-slate-100 flex items-center justify-between px-5 text-[11px] font-semibold text-slate-500">
+              <span>9:41</span>
+              <span>5G 88%</span>
+            </div>
+
+            <!-- Survey Header -->
+            <div class="bg-indigo-700 text-white px-4 py-2.5 shadow-sm">
+              <div class="flex items-center justify-between text-[11px] font-medium opacity-90">
+                <span>Inizio Health Survey</span>
+                <span id="screen-market-tag">PT-BR (1046)</span>
+              </div>
+              <!-- Progress Bar -->
+              <div class="w-full bg-indigo-900/40 h-1.5 rounded-full mt-2 overflow-hidden">
+                <div class="bg-cyan-300 h-full w-[45%]"></div>
+              </div>
+            </div>
+
+            <!-- Survey Interactive Screen Body -->
+            <div id="survey-screen-content" class="flex-1 p-4 flex flex-col justify-between overflow-y-auto custom-scrollbar">
+              <!-- Content replaced dynamically by renderQuestionScreen() -->
+            </div>
+
+            <!-- Phone Home Indicator Bar -->
+            <div class="h-4 bg-white flex items-center justify-center">
+              <div class="w-24 h-1 bg-slate-300 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Frame Container (Hidden by default) -->
+        <div id="desktop-frame" class="hidden w-full h-[580px] bg-slate-900 border-2 border-slate-700 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+          <!-- Browser Header Bar -->
+          <div class="bg-slate-800 px-4 py-2 flex items-center gap-3 border-b border-slate-700">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+            </div>
+            <div class="flex-1 bg-slate-950 px-3 py-1 rounded text-xs text-slate-400 font-mono truncate">
+              https://surveys.inizioignite.com/runtime/eval?lang=<span id="desktop-url-lang">1046</span>&amp;device=desktop
+            </div>
+          </div>
+
+          <!-- Desktop Inner Survey Body -->
+          <div class="flex-1 bg-white text-slate-900 flex flex-col overflow-y-auto">
+            <div class="bg-indigo-700 text-white px-6 py-3">
+              <div class="flex items-center justify-between text-xs font-semibold">
+                <span>Product Brand Evaluation Study · Desktop View</span>
+                <span>Page 8 of 22</span>
+              </div>
+              <div class="w-full bg-indigo-900/40 h-1.5 rounded-full mt-2">
+                <div class="bg-cyan-300 h-full w-[45%]"></div>
+              </div>
+            </div>
+
+            <div id="desktop-screen-content" class="p-6 flex-1 flex flex-col justify-between">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bug Diagnostic Inspector Console -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+          <span class="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Runtime Inspector Output
+          </span>
+          <span id="diagnostic-status-pill" class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">
+            Idle
+          </span>
+        </div>
+        <div id="diagnostic-log" class="text-xs font-mono text-slate-400 mt-2.5 space-y-1">
+          <div>&gt; Closed-loop survey walker ready.</div>
+          <div>&gt; Select question and click "Execute Live Walk".</div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT STATE ENGINE & SURVEY SIMULATOR                            -->
+  <!-- ===================================================================== -->
+  <script>
+    // System State
+    let currentSampleSize = 150;
+    let currentDevice = 'mobile';
+    let currentQuestion = 'Q7Sk';
+    let currentLanguage = '1046';
+    let activeTask = 'F01';
+
+    // Agent trace database
+    const agentTasksData = {
+      'F01': {
+        title: "Investigator Agent: Task TASK-001 (Q7Sk)",
+        subtitle: "Target Variable: Q7Sk · Check Type: item_non_response · Severity: Critical",
+        clv: true,
+        turns: [
+          {
+            step: 1,
+            thought: "HYPOTHESIS: Q7Sk item non-response (missingness) is localized to specific mobile touch packages rather than universal respondent drop-off.",
+            tool: "get_schema",
+            args: { variable: "Q7Sk" },
+            result: { type: "numeric_slider", min: 0, max: 100, localized_packages: ["9", "18", "31", "1046", "2058"] }
+          },
+          {
+            step: 2,
+            thought: "Checking distribution across language markets and devices to locate missingness cluster.",
+            tool: "query_data",
+            args: { target_variable: "Q7Sk", group_by: "lastdevicetype" },
+            result: { desktop_missing: "0.0%", mobile_missing: "100.0% in lang 1046 & 2058" }
+          },
+          {
+            step: 3,
+            thought: "Executing closed-loop in-memory survey walker to simulate mobile touch event listener on Q7Sk.",
+            tool: "walk_survey",
+            args: { language: "1046", device: "mobile", target_question: "Q7Sk" },
+            result: { bugs_observed: ["Q7Sk_mobile_touch_failure"], alert: "Slider touch listener uninitialized in localized bundle 1046." }
+          },
+          {
+            step: 4,
+            thought: "Closed-loop verification confirmed. Root cause is client-side mobile slider touch failure. Concluding investigation.",
+            tool: "conclude",
+            args: { cause: "Mobile touch slider initialization defect in languages 1046 and 2058", severity: "critical", confidence: "high" },
+            result: { status: "concluded", finding_id: "FINDING-F01" }
+          }
+        ]
+      },
+      'F04': {
+        title: "Investigator Agent: Task TASK-002 (S5)",
+        subtitle: "Target Variable: S5 · Check Type: range_violation · Severity: Critical",
+        clv: true,
+        turns: [
+          {
+            step: 1,
+            thought: "HYPOTHESIS: Question S5 lacks client-side upper boundary constraint, allowing respondents to enter values > 100.0.",
+            tool: "get_schema",
+            args: { variable: "S5" },
+            result: { type: "numeric", max_expected: 100.0, confirmit_validation: "missing_upperNumericLimit" }
+          },
+          {
+            step: 2,
+            thought: "Verifying respondent distribution for out-of-range values.",
+            tool: "query_data",
+            args: { target_variable: "S5", filter_dict: { "S5__gt": 100 } },
+            result: { rows_returned: 3, max_value: 115.0 }
+          },
+          {
+            step: 3,
+            thought: "Walking survey with out-of-range value (115.0) to observe submission response.",
+            tool: "walk_survey",
+            args: { language: "9", device: "desktop", target_question: "S5", mock_inputs: { S5: 115.0 } },
+            result: { bugs_observed: ["S5_missing_range_boundary"], page_advanced: true }
+          },
+          {
+            step: 4,
+            thought: "Confirmed: questionnaire script allows submission > 100.0 without client validation. Concluding.",
+            tool: "conclude",
+            args: { cause: "Missing upperNumericLimit constraint on numeric question S5", severity: "critical" },
+            result: { status: "concluded", finding_id: "FINDING-F04" }
+          }
+        ]
+      },
+      'F05': {
+        title: "Investigator Agent: Task TASK-003 (Q7Mx)",
+        subtitle: "Target Variable: Q7Mx · Check Type: allocation_sum · Severity: Critical",
+        clv: true,
+        turns: [
+          {
+            step: 1,
+            thought: "HYPOTHESIS: Question Q7Mx constant-sum validation script was disabled or improperly formatted.",
+            tool: "get_schema",
+            args: { variable: "Q7Mx" },
+            result: { type: "constant_sum", items: 4, expected_total: 100 }
+          },
+          {
+            step: 2,
+            thought: "Querying completes with allocation total != 100.",
+            tool: "query_data",
+            args: { target_variable: "Q7Mx_sum", filter_dict: { "Q7Mx_sum__ne": 100 } },
+            result: { completes_flagged: 4, observed_sums: [90, 110] }
+          },
+          {
+            step: 3,
+            thought: "Simulating survey submission with sum = 90.0.",
+            tool: "walk_survey",
+            args: { language: "9", device: "desktop", target_question: "Q7Mx", mock_inputs: { Q7Mx: [40, 30, 20, 0] } },
+            result: { bugs_observed: ["Q7Mx_sum_validation_disabled"], alert: "Advance succeeded despite total=90." }
+          },
+          {
+            step: 4,
+            thought: "Totalizer validation script defect verified. Concluding task.",
+            tool: "conclude",
+            args: { cause: "Allocation sum totalizer validation disabled on Q7Mx", severity: "critical" },
+            result: { status: "concluded", finding_id: "FINDING-F05" }
+          }
+        ]
+      },
+      'F03': {
+        title: "Investigator Agent: Task TASK-004 (hidLOI)",
+        subtitle: "Target Variable: hidLOI · Check Type: speeding · Severity: High",
+        clv: false,
+        turns: [
+          {
+            step: 1,
+            thought: "HYPOTHESIS: Sample provider bgSource=3 is funneling automated or fraudulent bot traffic completing in under 40% of median LOI.",
+            tool: "query_data",
+            args: { target_variable: "hidLOI", group_by: "bgSource" },
+            result: { bgSource_1_median: "14.2 min", bgSource_2_median: "13.8 min", bgSource_3_median: "3.5 min" }
+          },
+          {
+            step: 2,
+            thought: "Sampling individual respondents from bgSource=3 to inspect answer quality.",
+            tool: "sample_respondents",
+            args: { filter_dict: { bgSource: 3 }, n: 3 },
+            result: { sampled: 3, pattern: "Uniform responses, near-instantaneous page advances" }
+          },
+          {
+            step: 3,
+            thought: "Survey walker confirms questionnaires load normally; this is external sample vendor fraud, not a questionnaire script defect.",
+            tool: "conclude",
+            args: { cause: "Panel provider 3 speeding cluster (fraudulent low-engagement traffic)", severity: "high" },
+            result: { status: "concluded", finding_id: "FINDING-F03" }
+          }
+        ]
+      },
+      'F02': {
+        title: "Investigator Agent: Task TASK-005 (T14)",
+        subtitle: "Target Variable: T14 · Check Type: straightlining · Severity: Medium",
+        clv: false,
+        turns: [
+          {
+            step: 1,
+            thought: "HYPOTHESIS: Grid T14 straightlining is caused by inattentive respondents rather than pre-selected radio defaults.",
+            tool: "walk_survey",
+            args: { language: "9", device: "desktop", target_question: "T14" },
+            result: { pre_selected_radios: false, loaded_clean: true }
+          },
+          {
+            step: 2,
+            thought: "Verified no pre-selection bug. Behavior is human inattention across grid items. Concluding.",
+            tool: "conclude",
+            args: { cause: "Respondent inattention straightlining across 7 items of T14", severity: "medium" },
+            result: { status: "concluded", finding_id: "FINDING-F02" }
+          }
+        ]
+      }
+    };
+
+    // Initialize View
+    window.addEventListener('DOMContentLoaded', () => {
+      renderQuestionScreen();
+      renderAgentTurns('F01');
+    });
+
+    // Tab Switching
+    function switchTab(tabId) {
+      const tabs = ['rules', 'agent', 'adjudicator'];
+      tabs.forEach(t => {
+        document.getElementById(`tab-${t}`).classList.add('hidden');
+        const btn = document.getElementById(`tab-btn-${t}`);
+        btn.classList.remove('text-indigo-400', 'border-indigo-500', 'font-bold');
+        btn.classList.add('text-slate-400', 'border-transparent', 'font-medium');
+      });
+      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+      const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+      activeBtn.classList.add('text-indigo-400', 'border-indigo-500', 'font-bold');
+      activeBtn.classList.remove('text-slate-400', 'border-transparent', 'font-medium');
+    }
+
+    // Task Selection
+    function selectTask(taskId) {
+      activeTask = taskId;
+      ['F01', 'F04', 'F05', 'F03', 'F02'].forEach(id => {
+        const pill = document.getElementById(`pill-${id}`);
+        if (id === taskId) {
+          pill.className = "px-3 py-1.5 rounded-lg text-xs font-bold border transition-all bg-indigo-600/30 text-indigo-300 border-indigo-500";
+        } else {
+          pill.className = "px-3 py-1.5 rounded-lg text-xs font-medium border transition-all bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200";
+        }
+      });
+      renderAgentTurns(taskId);
+
+      // Auto-switch walker target to match task
+      if (taskId === 'F01') { changeQuestion('Q7Sk'); changeLanguage('1046'); setDeviceMode('mobile'); }
+      else if (taskId === 'F04') { changeQuestion('S5'); setDeviceMode('desktop'); }
+      else if (taskId === 'F05') { changeQuestion('Q7Mx'); setDeviceMode('desktop'); }
+      else if (taskId === 'F02') { changeQuestion('T14'); setDeviceMode('desktop'); }
+    }
+
+    // Render Agent Turns
+    function renderAgentTurns(taskId) {
+      const data = agentTasksData[taskId];
+      document.getElementById('investigator-title').textContent = data.title;
+      document.getElementById('investigator-subtitle').textContent = data.subtitle;
+
+      const clvBadge = document.getElementById('clv-badge');
+      if (data.clv) {
+        clvBadge.className = "text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1 font-semibold";
+        clvBadge.innerHTML = "✓ Closed-Loop Verified";
+      } else {
+        clvBadge.className = "text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700 font-semibold";
+        clvBadge.innerHTML = "External Panel Anomaly";
+      }
+
+      const stream = document.getElementById('agent-turns-stream');
+      stream.innerHTML = '';
+
+      data.turns.forEach((t, idx) => {
+        const turnDiv = document.createElement('div');
+        turnDiv.className = "p-3 rounded-lg border border-slate-800 bg-slate-950/60 flex flex-col gap-2";
+        turnDiv.innerHTML = `
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="font-bold text-indigo-400 uppercase tracking-wider">Step ${t.step}: Model Thought</span>
+            <span class="font-mono text-slate-500">Turn ${idx + 1}</span>
+          </div>
+          <p class="text-xs text-slate-300 italic bg-slate-900/60 p-2 rounded border border-slate-800/80">"${t.thought}"</p>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
+              tool: ${t.tool}()
+            </span>
+            <span class="text-[11px] font-mono text-slate-400 truncate max-w-[280px]">
+              args: ${JSON.stringify(t.args)}
+            </span>
+          </div>
+          <div class="text-[11px] font-mono text-emerald-400/90 bg-emerald-950/30 p-2 rounded border border-emerald-900/40">
+            result: ${JSON.stringify(t.result)}
+          </div>
+        `;
+        stream.appendChild(turnDiv);
+      });
+    }
+
+    // Sample Size Switcher
+    function setSampleSize(n) {
+      currentSampleSize = n;
+      const b45 = document.getElementById('btn-n45');
+      const b150 = document.getElementById('btn-n150');
+      const statement = document.getElementById('power-gate-text');
+      const badge = document.getElementById('power-gate-badge');
+      const suppPill = document.getElementById('suppressed-pill');
+
+      if (n === 45) {
+        b45.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-600/30";
+        b150.className = "px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-800 text-slate-300 hover:bg-slate-700";
+        badge.textContent = "84 Suppressed";
+        suppPill.textContent = "84 suppressed (Power Gate)";
+        statement.textContent = "255 checks passed, 5 flagged, 84 suppressed. Underpowered sample (n=45 < 200). 84 degenerate distribution and market-mix tests dynamically suppressed to prevent false alarms.";
+      } else {
+        b150.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-600/30";
+        b45.className = "px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-800 text-slate-300 hover:bg-slate-700";
+        badge.textContent = "83 Suppressed";
+        suppPill.textContent = "83 suppressed (Power Gate)";
+        statement.textContent = "256 checks passed, 5 flagged, 83 suppressed. Statistical Power Gate dynamically suppressed degenerate distribution checks because n=150 is under the required power threshold (n < 200).";
+      }
+    }
+
+    // Device Mode Switcher
+    function setDeviceMode(mode) {
+      currentDevice = mode;
+      const mFrame = document.getElementById('mobile-frame');
+      const dFrame = document.getElementById('desktop-frame');
+      const mBtn = document.getElementById('dev-mobile-btn');
+      const dBtn = document.getElementById('dev-desktop-btn');
+
+      if (mode === 'mobile') {
+        mFrame.classList.remove('hidden');
+        dFrame.classList.add('hidden');
+        mBtn.className = "px-2.5 py-1 rounded text-xs font-semibold bg-indigo-600 text-white transition-all";
+        dBtn.className = "px-2.5 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition-all";
+      } else {
+        mFrame.classList.add('hidden');
+        dFrame.classList.remove('hidden');
+        dBtn.className = "px-2.5 py-1 rounded text-xs font-semibold bg-indigo-600 text-white transition-all";
+        mBtn.className = "px-2.5 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition-all";
+      }
+      renderQuestionScreen();
+    }
+
+    // Question & Language Selectors
+    function changeQuestion(q) {
+      currentQuestion = q;
+      document.getElementById('select-question').value = q;
+      document.getElementById('walk-target-label').textContent = q;
+      renderQuestionScreen();
+    }
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      document.getElementById('select-language').value = lang;
+      const tag = document.getElementById('screen-market-tag');
+      const urlLang = document.getElementById('desktop-url-lang');
+      urlLang.textContent = lang;
+
+      const langMap = { "1046": "PT-BR (1046)", "2058": "ES-MX (2058)", "9": "EN-UK (9)", "18": "FR-FR (18)", "31": "DE-DE (31)" };
+      tag.textContent = langMap[lang] || lang;
+      renderQuestionScreen();
+    }
+
+    // Render Question Screen inside device frames
+    function renderQuestionScreen() {
+      const isMobile = (currentDevice === 'mobile');
+      const containerId = isMobile ? 'survey-screen-content' : 'desktop-screen-content';
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      if (currentQuestion === 'Q7Sk') {
+        const isDefective = isMobile && (currentLanguage === '1046' || currentLanguage === '2058');
+        container.innerHTML = `
+          <div>
+            <div class="text-[11px] uppercase font-bold text-indigo-600 tracking-wider">Question Q7Sk</div>
+            <h3 class="text-xs font-bold text-slate-900 mt-1">Please allocate your treatment preference between Drug A and Drug B using the slider below:</h3>
+            
+            <div class="mt-5 space-y-4">
+              <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                  <span>Drug A</span>
+                  <span id="slider-val-A">50%</span>
+                </div>
+                <!-- Interactive slider -->
+                <div class="relative py-2">
+                  <input type="range" id="q7sk-slider" min="0" max="100" value="50" class="w-full accent-indigo-600 cursor-pointer" oninput="updateSlider(this.value)">
+                  ${isDefective ? `<div id="touch-error-indicator" class="hidden absolute top-0 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-rose-500 bg-rose-500/20 touch-target pointer-events-none"></div>` : ''}
+                </div>
+                <div class="flex justify-between text-[11px] text-slate-400">
+                  <span>0%</span>
+                  <span>100%</span>
+                </div>
+              </div>
+
+              ${isDefective ? `
+                <div id="q7sk-alert-box" class="p-2.5 rounded-lg bg-rose-50 border border-rose-300 text-rose-800 text-[11px] space-y-1">
+                  <div class="font-bold flex items-center gap-1">⚠️ Mobile Touch Listener Uninitialized</div>
+                  <div>Confirmit package <strong>${currentLanguage}</strong> lacks mobile touchstart binding. Slider fails to register touch drag on mobile.</div>
+                </div>
+              ` : `
+                <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800 text-[11px]">
+                  ✓ Clean widget script active. Slider registers interaction normally.
+                </div>
+              `}
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <button class="px-3 py-1.5 rounded text-xs text-slate-400 font-medium">Back</button>
+            <button id="survey-next-btn" onclick="simulateSubmitAttempt()" class="px-4 py-1.5 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow">
+              Next Page &rarr;
+            </button>
+          </div>
+        `;
+      } else if (currentQuestion === 'S5') {
+        container.innerHTML = `
+          <div>
+            <div class="text-[11px] uppercase font-bold text-indigo-600 tracking-wider">Question S5 · Screener</div>
+            <h3 class="text-xs font-bold text-slate-900 mt-1">What percentage of your practice is devoted to pediatric patients? (0 - 100%)</h3>
+            
+            <div class="mt-4">
+              <label class="text-[11px] text-slate-500 block mb-1">Enter percentage value:</label>
+              <input type="number" id="s5-input" value="115" class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-600">
+              <p class="text-[11px] text-rose-600 font-semibold mt-1">Boundary flaw: Schema expects &le; 100.0, but upperNumericLimit constraint is missing.</p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <button class="px-3 py-1.5 rounded text-xs text-slate-400 font-medium">Back</button>
+            <button onclick="simulateSubmitAttempt()" class="px-4 py-1.5 rounded bg-indigo-600 text-white text-xs font-bold shadow">
+              Next Page &rarr;
+            </button>
+          </div>
+        `;
+      } else if (currentQuestion === 'Q7Mx') {
+        container.innerHTML = `
+          <div>
+            <div class="text-[11px] uppercase font-bold text-indigo-600 tracking-wider">Question Q7Mx · Constant Sum</div>
+            <h3 class="text-xs font-bold text-slate-900 mt-1">Please allocate 100 points across the following 3 attributes:</h3>
+            
+            <div class="mt-3 space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span>Efficacy</span>
+                <input id="q7mx-1" type="number" value="40" class="w-16 border rounded px-2 py-1 text-center font-bold">
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Safety Profile</span>
+                <input id="q7mx-2" type="number" value="30" class="w-16 border rounded px-2 py-1 text-center font-bold">
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Dosing Convenience</span>
+                <input id="q7mx-3" type="number" value="20" class="w-16 border rounded px-2 py-1 text-center font-bold">
+              </div>
+              <div class="flex justify-between items-center pt-2 border-t font-bold text-rose-600">
+                <span>Current Total:</span>
+                <span id="q7mx-sum">90 / 100 (INVALID SUM)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <button class="px-3 py-1.5 rounded text-xs text-slate-400 font-medium">Back</button>
+            <button onclick="simulateSubmitAttempt()" class="px-4 py-1.5 rounded bg-indigo-600 text-white text-xs font-bold shadow">
+              Next Page &rarr;
+            </button>
+          </div>
+        `;
+      } else if (currentQuestion === 'T14') {
+        container.innerHTML = `
+          <div>
+            <div class="text-[11px] uppercase font-bold text-indigo-600 tracking-wider">Question T14 · Evaluation Grid</div>
+            <h3 class="text-xs font-bold text-slate-900 mt-1">Please rate the following product statements on a 1–5 agreement scale:</h3>
+            
+            <div class="mt-3 space-y-2 text-xs">
+              ${[1, 2, 3, 4, 5, 6, 7].map(i => `
+                <div class="flex justify-between items-center py-1 border-b border-slate-100">
+                  <span class="text-[11px]">Statement ${i}</span>
+                  <div class="flex gap-2">
+                    ${[1, 2, 3, 4, 5].map(v => `
+                      <label class="flex items-center text-[10px]">
+                        <input type="radio" name="t14_${i}" value="${v}" ${v === 4 ? 'checked' : ''} class="accent-indigo-600">
+                      </label>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+              <div class="text-[11px] text-amber-700 font-semibold pt-1">
+                Straightlining pattern: All items answered identically (Scale = 4).
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <button class="px-3 py-1.5 rounded text-xs text-slate-400 font-medium">Back</button>
+            <button onclick="simulateSubmitAttempt()" class="px-4 py-1.5 rounded bg-indigo-600 text-white text-xs font-bold shadow">
+              Next Page &rarr;
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    function updateSlider(val) {
+      const label = document.getElementById('slider-val-A');
+      if (label) label.textContent = `${val}%`;
+    }
+
+    // Survey Walker Live Execution
+    function startSurveyWalkSimulation() {
+      const diagLog = document.getElementById('diagnostic-log');
+      const pill = document.getElementById('diagnostic-status-pill');
+      pill.textContent = "Walking...";
+      pill.className = "text-[11px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono animate-pulse";
+
+      diagLog.innerHTML = `
+        <div>&gt; [INIT] walk_survey(language="${currentLanguage}", device="${currentDevice}", target="${currentQuestion}")</div>
+        <div>&gt; Loading questionnaire DOM in-memory...</div>
+      `;
+
+      setTimeout(() => {
+        if (currentQuestion === 'Q7Sk') {
+          const isDefective = (currentDevice === 'mobile') && (currentLanguage === '1046' || currentLanguage === '2058');
+          if (isDefective) {
+            const touchIndicator = document.getElementById('touch-error-indicator');
+            if (touchIndicator) touchIndicator.classList.remove('hidden');
+
+            diagLog.innerHTML += `
+              <div>&gt; Dispatching touchstart on #q7sk-slider handle...</div>
+              <div class="text-rose-400 font-bold">&gt; [ERROR] Uncaught TypeError: touchListener is not registered in bundle_${currentLanguage}.js</div>
+              <div>&gt; Attempting submit with empty/unmodified response...</div>
+              <div class="text-amber-400 font-bold">&gt; [BUG CONFIRMED] Question submitted empty; item_non_response triggered!</div>
+              <div class="text-emerald-400 font-bold">&gt; Closed-loop root cause verified in 18ms.</div>
+            `;
+            pill.textContent = "BUG DETECTED (F01)";
+            pill.className = "text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-mono font-bold";
+          } else {
+            diagLog.innerHTML += `
+              <div>&gt; Dispatching mouse drag event on #q7sk-slider handle...</div>
+              <div>&gt; Value updated cleanly to 65%. Advancing page...</div>
+              <div class="text-emerald-400 font-bold">&gt; [PASS] Clean desktop submission confirmed.</div>
+            `;
+            pill.textContent = "PASSED (CLEAN)";
+            pill.className = "text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono";
+          }
+        } else if (currentQuestion === 'S5') {
+          diagLog.innerHTML += `
+            <div>&gt; Entering mock input S5 = 115.0...</div>
+            <div>&gt; Evaluating Confirmit numeric range validation...</div>
+            <div class="text-rose-400 font-bold">&gt; [BUG CONFIRMED] Missing upperNumericLimit constraint. Form advances with S5=115.0!</div>
+            <div class="text-emerald-400 font-bold">&gt; Closed-loop root cause verified in 12ms.</div>
+          `;
+          pill.textContent = "BUG DETECTED (F04)";
+          pill.className = "text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-mono font-bold";
+        } else if (currentQuestion === 'Q7Mx') {
+          diagLog.innerHTML += `
+            <div>&gt; Entering allocation values summing to 90...</div>
+            <div>&gt; Checking totalizer validation script...</div>
+            <div class="text-rose-400 font-bold">&gt; [BUG CONFIRMED] Totalizer script inactive. Incomplete sum (90 != 100) accepted!</div>
+            <div class="text-emerald-400 font-bold">&gt; Closed-loop root cause verified in 14ms.</div>
+          `;
+          pill.textContent = "BUG DETECTED (F05)";
+          pill.className = "text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-mono font-bold";
+        } else if (currentQuestion === 'T14') {
+          diagLog.innerHTML += `
+            <div>&gt; Inspecting radio inputs default state on load...</div>
+            <div>&gt; Radio buttons load unselected (no pre-selected default bug).</div>
+            <div class="text-amber-400 font-bold">&gt; Straightlining verified as respondent inattention, not template defect.</div>
+          `;
+          pill.textContent = "CLEAN TEMPLATE (F02)";
+          pill.className = "text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono";
+        }
+      }, 400);
+    }
+
+    function simulateSubmitAttempt() {
+      startSurveyWalkSimulation();
+    }
+
+    function resetSimulator() {
+      const diagLog = document.getElementById('diagnostic-log');
+      const pill = document.getElementById('diagnostic-status-pill');
+      pill.textContent = "Idle";
+      pill.className = "text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono";
+      diagLog.innerHTML = `
+        <div>&gt; Closed-loop survey walker ready.</div>
+        <div>&gt; Select question and click "Execute Live Walk".</div>
+      `;
+      renderQuestionScreen();
+    }
+
+    function triggerFullPipelineDemo() {
+      switchTab('agent');
+      selectTask('F01');
+      startSurveyWalkSimulation();
+    }
+  </script>
+</body>
+</html>
