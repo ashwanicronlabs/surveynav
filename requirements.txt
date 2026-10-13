@@ -1,0 +1,8 @@
+# SurveyNav - Soft-Launch Quality Control (QC) Agent Platform
+# Core Dependencies
+requests>=2.28.0
+rich>=13.0.0
+
+# Optional Development & Testing Utilities (uncomment to install)
+# pytest>=7.0.0
+# python-dotenv>=1.0.0
